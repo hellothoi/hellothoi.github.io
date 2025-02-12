@@ -49,9 +49,13 @@
         }
 
         header {
-            background: rgba(255, 75, 92, 0.8); /* Semi-transparent red background */
             color: white;
             padding: 20px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            backdrop-filter: blur(10px); /* Optional: Adds blur effect to the background */
         }
 
         .profile-pic {
@@ -67,9 +71,10 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            background: rgba(255, 75, 92, 0.8); /* Semi-transparent red background */
             padding: 15px 0;
             margin: 0;
+            z-index: 1;
+            backdrop-filter: blur(10px); /* Optional: Adds blur effect to the background */
         }
 
         nav ul li {
@@ -90,9 +95,13 @@
         }
 
         footer {
-            background: rgba(255, 75, 92, 0.8); /* Semi-transparent red background */
             color: white;
             padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(10px); /* Optional: Adds blur effect to the background */
         }
     </style>
 </head>
