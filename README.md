@@ -17,7 +17,7 @@ Welcome to my personal website hosted on GitHub Pages! This website showcases my
 
 ## How to Use
 
-1. Visit the website: [https://username.github.io](https://username.github.io)
+1. Visit the website: [https://username.github.io](https://hellothoi.github.io/)
 2. Navigate through the pages using the menu:
    - **Home**: Learn about me and my skills.
    - **About**: Explore my experience and education.
