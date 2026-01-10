@@ -4,72 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laishram Thoibisana</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: white;
-            overflow-x: hidden;
             background-color: black;
+            overflow-x: hidden;
         }
+
+        /* Video Background */
         .video-background-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Keep video in the background */
+            z-index: -1;
         }
+
         .video-background {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         header {
             text-align: center;
-            padding: 80px 0;
+            padding: 80px 20px;
         }
+
         header img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 5px solid white;
+            border: 4px solid white;
         }
+
         header h1 {
-            font-size: 50px;
-            margin-top: 20px;
+            font-size: 48px;
+            margin: 20px 0 10px;
         }
+
         header h2 {
-            font-size: 35px;
-            margin-top: 10px;
+            font-size: 28px;
             font-weight: normal;
         }
+
         section {
+            margin: 30px auto;
             padding: 20px;
-            margin: 20px;
-            background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+            max-width: 1000px;
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
-            margin-bottom: 20px;
         }
+
         h3 {
-            font-size: 30px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
         }
+
         .content {
-            font-size: 25px;
+            font-size: 20px;
+            line-height: 1.6;
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0);
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 16px;
         }
     </style>
 </head>
+
 <body>
 
-<!-- Video Background Container -->
+<!-- Background Video -->
 <div class="video-background-container">
     <video autoplay muted loop class="video-background">
         <source src="background-picnic.mp4" type="video/mp4">
@@ -77,47 +100,123 @@
     </video>
 </div>
 
+<!-- Header -->
 <header>
     <img src="photo.jpg" alt="Laishram Thoibisana">
     <h1>Laishram Thoibisana</h1>
     <h1>ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</h1>
-    <h2>Native Manipuri Language Expert | Translator (Manipuri, Korean, English & Hindi)</h2>
+    <h2>Native Manipuri Language Expert | Translator & Transcriber</h2>
 </header>
 
+<!-- About -->
 <section>
     <h3>About Me</h3>
     <p class="content">
-        I am a passionate linguist specializing in translation and transcription across multiple languages, including Manipuri, Korean, English, and Hindi. I hold a B.A. in Education from Manipur University and a Diploma in Korean Language from Nalanda University.
+        I am a professional Manipuri linguist specializing in translation and transcription.
+        I work with academic institutions, language consultancies, and global platforms,
+        delivering accurate and high-quality linguistic data in Manipuri, English, Hindi, and Korean.
     </p>
 </section>
 
+<!-- Skills -->
 <section>
     <h3>Skills</h3>
     <ul class="content">
-        <li>Translation & Transcription (Manipuri, Korean, English, Hindi)</li>
-        <li>Educational Research</li>
-        <li>Typing (Certified)</li>
+        <li>Manipuri Translation & Transcription</li>
+        <li>English & Hindi Translation</li>
+        <li>Korean Language Proficiency</li>
+        <li>Linguistic Data Annotation</li>
+        <li>Academic & Research Translation</li>
+        <li>Certified Typist</li>
     </ul>
 </section>
 
+<!-- Experience -->
 <section>
     <h3>Projects & Experience</h3>
     <ul class="content">
-        <li>Language Expert - Lingual Consultancy Services (Feb 2025 - Present)</li>
-        <li>Manipuri Translator - COIL-D, IIT Guwahati (Jan 2025 - Present)</li>
-        <li>Linguistic Translator & Transcriber - Shaip (Jan 2023 - Present)</li>
+        <li>
+            <strong>Manipuri Language Expert</strong> – Karya (Freelance)<br>
+            <em>Jan 2026 – Present | India (Remote)</em>
+        </li>
+
+        <li>
+            <strong>Manipuri Translator</strong> – COIL-D, Indian Institute of Technology Guwahati (Freelance)<br>
+            <em>Jan 2025 – Present | Remote</em>
+        </li>
+
+        <li>
+            <strong>Manipuri Language Expert</strong> – Lingual Consultancy Services (Freelance)<br>
+            <em>Jan 2025 – Dec 2025 | India (Remote)</em><br>
+            Translation and transcription in Manipuri, English, and Hindi with strict quality standards.
+        </li>
+
+        <li>
+            <strong>Linguistic Translator & Transcriber</strong> – Shaip (Freelance)<br>
+            <em>Jan 2023 – Dec 2024 | Remote</em><br>
+            Translated Manipuri ↔ English documents and provided professional audio transcription services.
+        </li>
     </ul>
 </section>
 
+<!-- Education -->
 <section>
-    <h3>Certifications</h3>
+    <h3>Education</h3>
     <ul class="content">
-        <li>Typing Test Certification</li>
+        <li>
+            <strong>Higher National Diploma – Korean Language & Literature</strong><br>
+            Nalanda University<br>
+            <em>January 2025</em><br>
+            Activities & Societies: My love is in the Language
+        </li>
+
+        <li>
+            <strong>Bachelor of Arts (B.A.) in Education</strong><br>
+            Manipur University<br>
+            <em>July 2018 – June 2022</em><br>
+            Graduated with First Class Honors<br>
+            Skills: Linguistics
+        </li>
+
+        <li>
+            <strong>Intermediate – Science</strong><br>
+            Waikhom Mani Girls’ College<br>
+            <em>July 2017 – June 2019</em><br>
+            Physics, Chemistry, Biology, and Mathematics
+        </li>
     </ul>
 </section>
 
+<!-- Certifications -->
+<section>
+    <h3>Licenses & Certifications</h3>
+    <ul class="content">
+        <li>
+            <strong>Certificate of Proficiency in Korean</strong><br>
+            Nalanda University<br>
+            <em>Issued June 2025</em><br>
+            Credential ID: CLK/25-S/KOR24
+        </li>
+
+        <li>
+            <strong>Advanced Data Analytics</strong><br>
+            Google<br>
+            <em>Issued January 2025</em>
+        </li>
+
+        <li>
+            <strong>Typing Test Certification</strong><br>
+            Typing.com<br>
+            <em>Issued August 2024</em><br>
+            Credential ID: 305972911-158006147<br>
+            Typing Speed: 42 WPM | Accuracy: 98%
+        </li>
+    </ul>
+</section>
+
+<!-- Footer -->
 <footer>
-    <p>© 2025 Laishram Thoibisana. All rights reserved.</p>
+    © 2026 Laishram Thoibisana. All rights reserved.
 </footer>
 
 </body>
