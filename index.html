@@ -1,260 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laishram Thoibisana | Linguist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laishram Thoibisana</title>
 
-<style>
-:root {
-    --primary: #1abc9c;
-    --dark: #0b0b0b;
-    --card: rgba(255,255,255,0.08);
-    --text: #f2f2f2;
-    --muted: #b5b5b5;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: black;
+            overflow-x: hidden;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        /* Video Background */
+        .video-background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(180deg, #000000, #0a0a0a);
-    color: var(--text);
-}
+        .video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-/* ---------- HERO ---------- */
-.hero {
-    min-height: 100vh;
-    background: url("background-picnic.mp4") no-repeat center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-}
+        header {
+            text-align: center;
+            padding: 80px 20px;
+        }
 
-.hero-content img {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 4px solid var(--primary);
-    margin-bottom: 20px;
-}
+        header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 10px 0;
-}
+        header h1 {
+            font-size: 48px;
+            margin: 20px 0 10px;
+        }
 
-.hero h2 {
-    font-size: 24px;
-    font-weight: normal;
-    color: var(--muted);
-}
+        header h2 {
+            font-size: 28px;
+            font-weight: normal;
+        }
 
-.hero p {
-    max-width: 700px;
-    margin: 20px auto;
-    font-size: 18px;
-}
+        section {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 1000px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
 
-/* ---------- SECTIONS ---------- */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 70px 20px;
-}
+        h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
 
-.section-title {
-    font-size: 36px;
-    margin-bottom: 40px;
-    position: relative;
-}
+        .content {
+            font-size: 20px;
+            line-height: 1.6;
+        }
 
-.section-title::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: var(--primary);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-}
+        ul {
+            padding-left: 20px;
+        }
 
-/* ---------- CARDS ---------- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+        li {
+            margin-bottom: 15px;
+        }
 
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.card h3 {
-    margin-top: 0;
-    color: var(--primary);
-}
-
-.card p {
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-/* ---------- LIST STYLE ---------- */
-.timeline-item {
-    margin-bottom: 30px;
-}
-
-.timeline-item strong {
-    color: var(--primary);
-}
-
-.timeline-item span {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #000;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-    .section-title {
-        font-size: 30px;
-    }
-}
-</style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <div class="hero-content">
-        <img src="photo.jpg" alt="Laishram Thoibisana">
-        <h1>Laishram Thoibisana</h1>
-        <h2>ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</h2>
-        <p>
-            Native Manipuri Language Expert specializing in translation, transcription,
-            and linguistic data services across Manipuri, English, Hindi, and Korean.
-        </p>
-    </div>
+<!-- Background Video -->
+<div class="video-background-container">
+    <video autoplay muted loop class="video-background">
+        <source src="background-picnic.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
 
-<!-- ABOUT -->
+<!-- Header -->
+<header>
+    <img src="photo.jpg" alt="Laishram Thoibisana">
+    <h1>Laishram Thoibisana</h1>
+    <h1>ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</h1>
+    <h2>Native Manipuri Language Expert | Translator & Transcriber</h2>
+</header>
+
+<!-- About -->
 <section>
-    <h2 class="section-title">About Me</h2>
-    <p>
-        I am a professional linguist working with academic institutions, global language
-        consultancies, and AI language projects. My expertise lies in delivering
-        high-quality translation and transcription while maintaining linguistic accuracy
-        and cultural integrity.
+    <h3>About Me</h3>
+    <p class="content">
+        I am a professional Manipuri linguist specializing in translation and transcription.
+        I work with academic institutions, language consultancies, and global platforms,
+        delivering accurate and high-quality linguistic data in Manipuri, English, Hindi, and Korean.
     </p>
 </section>
 
-<!-- SKILLS -->
+<!-- Skills -->
 <section>
-    <h2 class="section-title">Core Skills</h2>
-    <div class="grid">
-        <div class="card"><h3>Translation</h3><p>Manipuri, English, Hindi & Korean</p></div>
-        <div class="card"><h3>Transcription</h3><p>Audio & text transcription with accuracy</p></div>
-        <div class="card"><h3>Linguistic Data</h3><p>Annotation, validation & research support</p></div>
-        <div class="card"><h3>Typing</h3><p>42 WPM with 98% accuracy</p></div>
-    </div>
+    <h3>Skills</h3>
+    <ul class="content">
+        <li>Manipuri Translation & Transcription</li>
+        <li>English & Hindi Translation</li>
+        <li>Korean Language Proficiency</li>
+        <li>Linguistic Data Annotation</li>
+        <li>Academic & Research Translation</li>
+        <li>Certified Typist</li>
+    </ul>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- Experience -->
 <section>
-    <h2 class="section-title">Experience</h2>
+    <h3>Projects & Experience</h3>
+    <ul class="content">
+        <li>
+            <strong>Manipuri Language Expert</strong> – Karya (Freelance)<br>
+            <em>Jan 2026 – Present | India (Remote)</em>
+        </li>
 
-    <div class="timeline-item">
-        <strong>Manipuri Language Expert – Karya</strong><br>
-        <span>Jan 2026 – Present | Remote</span>
-    </div>
+        <li>
+            <strong>Manipuri Translator</strong> – COIL-D, Indian Institute of Technology Guwahati (Freelance)<br>
+            <em>Jan 2025 – Present | Remote</em>
+        </li>
 
-    <div class="timeline-item">
-        <strong>Manipuri Translator – COIL-D, IIT Guwahati</strong><br>
-        <span>Jan 2025 – Present | Remote</span>
-    </div>
+        <li>
+            <strong>Manipuri Language Expert</strong> – Lingual Consultancy Services (Freelance)<br>
+            <em>Jan 2025 – Dec 2025 | India (Remote)</em><br>
+            Translation and transcription in Manipuri, English, and Hindi with strict quality standards.
+        </li>
 
-    <div class="timeline-item">
-        <strong>Manipuri Language Expert – Lingual Consultancy Services</strong><br>
-        <span>Jan 2025 – Dec 2025 | Remote</span>
-    </div>
-
-    <div class="timeline-item">
-        <strong>Linguistic Translator & Transcriber – Shaip</strong><br>
-        <span>Jan 2023 – Dec 2024 | Remote</span>
-    </div>
+        <li>
+            <strong>Linguistic Translator & Transcriber</strong> – Shaip (Freelance)<br>
+            <em>Jan 2023 – Dec 2024 | Remote</em><br>
+            Translated Manipuri ↔ English documents and provided professional audio transcription services.
+        </li>
+    </ul>
 </section>
 
-<!-- EDUCATION -->
+<!-- Education -->
 <section>
-    <h2 class="section-title">Education</h2>
+    <h3>Education</h3>
+    <ul class="content">
+        <li>
+            <strong>Higher National Diploma – Korean Language & Literature</strong><br>
+            Nalanda University<br>
+            <em>January 2025</em><br>
+            Activities & Societies: My love is in the Language
+        </li>
 
-    <div class="timeline-item">
-        <strong>Higher National Diploma – Korean Language & Literature</strong><br>
-        <span>Nalanda University | 2025</span>
-    </div>
+        <li>
+            <strong>Bachelor of Arts (B.A.) in Education</strong><br>
+            Manipur University<br>
+            <em>July 2018 – June 2022</em><br>
+            Graduated with First Class Honors<br>
+            Skills: Linguistics
+        </li>
 
-    <div class="timeline-item">
-        <strong>B.A. in Education (First Class Honors)</strong><br>
-        <span>Manipur University | 2018 – 2022</span>
-    </div>
-
-    <div class="timeline-item">
-        <strong>Intermediate – Science</strong><br>
-        <span>Waikhom Mani Girls’ College | 2017 – 2019</span>
-    </div>
+        <li>
+            <strong>Intermediate – Science</strong><br>
+            Waikhom Mani Girls’ College<br>
+            <em>July 2017 – June 2019</em><br>
+            Physics, Chemistry, Biology, and Mathematics
+        </li>
+    </ul>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- Certifications -->
 <section>
-    <h2 class="section-title">Certifications</h2>
+    <h3>Licenses & Certifications</h3>
+    <ul class="content">
+        <li>
+            <strong>Certificate of Proficiency in Korean</strong><br>
+            Nalanda University<br>
+            <em>Issued June 2025</em><br>
+            Credential ID: CLK/25-S/KOR24
+        </li>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Korean Proficiency Certificate</h3>
-            <p>Nalanda University (2025)</p>
-        </div>
+        <li>
+            <strong>Advanced Data Analytics</strong><br>
+            Google<br>
+            <em>Issued January 2025</em>
+        </li>
 
-        <div class="card">
-            <h3>Advanced Data Analytics</h3>
-            <p>Google (2025)</p>
-        </div>
-
-        <div class="card">
-            <h3>Typing Certification</h3>
-            <p>42 WPM | 98% Accuracy</p>
-        </div>
-    </div>
+        <li>
+            <strong>Typing Test Certification</strong><br>
+            Typing.com<br>
+            <em>Issued August 2024</em><br>
+            Credential ID: 305972911-158006147<br>
+            Typing Speed: 42 WPM | Accuracy: 98%
+        </li>
+    </ul>
 </section>
 
+<!-- Footer -->
 <footer>
-    © 2026 Laishram Thoibisana • Professional Linguist Portfolio
+    © 2026 Laishram Thoibisana. All rights reserved.
 </footer>
 
 </body>
