@@ -27,7 +27,6 @@
         "alternateName": ["Laishram Thoibisana", "Laishram Thoibisana Devi"],
         "jobTitle": "Manipuri Language Expert",
         "url": "https://hellothoi.github.io/",
-        "email": "mailto:thoiclare@gmail.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Imphal", "addressRegion": "Manipur", "addressCountry": "IN" },
         "knowsLanguage": ["mni", "en", "hi", "ko"],
         "sameAs": [
@@ -1758,6 +1757,10 @@
             border-color: #bfe6cf;
         }
 
+        .copy-btn[hidden] {
+            display: none;
+        }
+
         .location {
             display: flex;
             align-items: center;
@@ -2771,8 +2774,9 @@
             <p class="contact-lead">Have a Manipuri language project in mind? I would love to hear about it.</p>
 
             <div class="email-row">
-                <a class="email-link" href="mailto:thoiclare@gmail.com">thoiclare@gmail.com</a>
-                <button class="btn btn-outline btn-sm copy-btn" id="copy-email" type="button">
+                <!-- The real address is assembled by the script below, so spam bots reading this page can't find it -->
+                <a class="email-link" id="email-link" href="#contact">thoiclare [at] gmail [dot] com</a>
+                <button class="btn btn-outline btn-sm copy-btn" id="copy-email" type="button" hidden>
                     <svg class="icon"><use href="#i-copy"/></svg><span>Copy</span>
                 </button>
             </div>
@@ -2785,8 +2789,8 @@
         <div class="card form-card reveal d2">
             <h3>Send a message</h3>
 
-            <!-- Messages are delivered to this email by FormSubmit (https://formsubmit.co) -->
-            <form class="contact-form" id="contact-form" action="https://formsubmit.co/thoiclare@gmail.com" method="POST">
+            <!-- Messages are delivered by FormSubmit (https://formsubmit.co); the script fills in the address -->
+            <form class="contact-form" id="contact-form" action="#contact" method="POST">
                 <input type="hidden" name="_subject" value="New message from your website">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
@@ -3302,19 +3306,25 @@
         }
     })();
 
-    // ---------- Copy email ----------
+    // ---------- Email: assembled here so the address never appears in the page as plain text ----------
+    const email = ['thoiclare', 'gmail.com'].join('@');
+    const emailLink = document.getElementById('email-link');
+    emailLink.textContent = email;
+    emailLink.href = `mailto:${email}`;
+
     const copyButton = document.getElementById('copy-email');
+    copyButton.hidden = false;
     copyButton.addEventListener('click', async () => {
         const label = copyButton.querySelector('span');
         try {
-            await navigator.clipboard.writeText('thoiclare@gmail.com');
+            await navigator.clipboard.writeText(email);
             copyButton.classList.add('copied');
             copyButton.querySelector('use').setAttribute('href', '#i-check');
             label.textContent = 'Copied';
         } catch (error) {
             label.textContent = 'Press Ctrl+C';
             const range = document.createRange();
-            range.selectNodeContents(document.querySelector('.email-link'));
+            range.selectNodeContents(emailLink);
             const selection = window.getSelection();
             selection.removeAllRanges();
             selection.addRange(range);
@@ -3338,7 +3348,7 @@
         statusEl.textContent = 'Sending…';
 
         try {
-            const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+            const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: new FormData(form)
@@ -3349,7 +3359,7 @@
             statusEl.textContent = 'Thank you! Your message has been sent.';
         } catch (error) {
             statusEl.classList.add('error');
-            statusEl.textContent = 'Sorry, the message could not be sent. Please email thoiclare@gmail.com directly.';
+            statusEl.textContent = `Sorry, the message could not be sent. Please email ${email} directly.`;
         } finally {
             button.disabled = false;
         }
