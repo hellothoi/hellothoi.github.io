@@ -1458,54 +1458,6 @@
             color: var(--berry);
         }
 
-        .keypad {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 12px;
-        }
-
-        .keypad[hidden],
-        .typing-hint[hidden] {
-            display: none;
-        }
-
-        .key {
-            min-width: 42px;
-            height: 42px;
-            padding: 0 8px;
-            font-family: "Noto Sans Meetei Mayek", var(--sans);
-            font-size: 19px;
-            color: var(--plum);
-            background-color: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: border-color 0.2s, color 0.2s, transform 0.15s;
-        }
-
-        .key:hover {
-            color: var(--berry);
-            border-color: var(--rose-soft);
-        }
-
-        .key:active {
-            transform: scale(0.94);
-        }
-
-        .key.wide {
-            padding: 0 16px;
-            font-family: var(--sans);
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .typing-hint {
-            margin: 10px 0 0;
-            font-size: 13.5px;
-            color: var(--muted);
-        }
-
         .typing-target .ok { color: var(--success); }
         .typing-target .bad { color: var(--error); text-decoration: underline; }
         .typing-target .cursor { border-left: 2px solid var(--berry); }
@@ -2700,8 +2652,6 @@
                 <p class="typing-ref" id="typing-ref">John 3:16</p>
                 <label for="typing-input" class="visually-hidden">Type the text shown above</label>
                 <input class="field" id="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here…">
-                <div class="keypad" id="keypad" role="group" aria-label="Meetei Mayek letters" hidden></div>
-                <p class="typing-hint" id="typing-hint" hidden>No Meetei Mayek keyboard? Tap the letters above.</p>
                 <div class="typing-stats">
                     <div><strong id="wpm">0</strong>WPM</div>
                     <div><strong id="accuracy">100%</strong>Accuracy</div>
@@ -3111,16 +3061,17 @@
     startGreetings();
 
     // ---------- Word explorer ----------
+    // Manipuri entries: [Meetei Mayek, romanization, phonetic Hindi-script spelling read aloud by the Hindi voice]
     const words = [
-        { en: 'Thank you', mni: ['ꯊꯥꯒꯠꯆꯔꯤ', 'Thagatchari'], hi: ['धन्यवाद', 'Dhanyavaad'], ko: ['감사합니다', 'Gamsahamnida'] },
-        { en: 'Love', mni: ['ꯅꯨꯡꯁꯤ', 'Nungsi'], hi: ['प्यार', 'Pyaar'], ko: ['사랑', 'Sarang'] },
-        { en: 'Mother', mni: ['ꯏꯃꯥ', 'Ima'], hi: ['माँ', 'Maa'], ko: ['어머니', 'Eomeoni'] },
-        { en: 'Friend', mni: ['ꯃꯔꯨꯞ', 'Marup'], hi: ['दोस्त', 'Dost'], ko: ['친구', 'Chingu'] },
-        { en: 'Water', mni: ['ꯏꯁꯤꯡ', 'Ising'], hi: ['पानी', 'Paani'], ko: ['물', 'Mul'] },
-        { en: 'Book', mni: ['ꯂꯥꯏꯔꯤꯛ', 'Lairik'], hi: ['किताब', 'Kitaab'], ko: ['책', 'Chaek'] }
+        { en: 'Thank you', mni: ['ꯊꯥꯒꯠꯆꯔꯤ', 'Thagatchari', 'थागत्चरी'], hi: ['धन्यवाद', 'Dhanyavaad'], ko: ['감사합니다', 'Gamsahamnida'] },
+        { en: 'Love', mni: ['ꯅꯨꯡꯁꯤ', 'Nungsi', 'नुंगसी'], hi: ['प्यार', 'Pyaar'], ko: ['사랑', 'Sarang'] },
+        { en: 'Mother', mni: ['ꯏꯃꯥ', 'Ima', 'ईमा'], hi: ['माँ', 'Maa'], ko: ['어머니', 'Eomeoni'] },
+        { en: 'Friend', mni: ['ꯃꯔꯨꯞ', 'Marup', 'मरुप'], hi: ['दोस्त', 'Dost'], ko: ['친구', 'Chingu'] },
+        { en: 'Water', mni: ['ꯏꯁꯤꯡ', 'Ising', 'इसिंग'], hi: ['पानी', 'Paani'], ko: ['물', 'Mul'] },
+        { en: 'Book', mni: ['ꯂꯥꯏꯔꯤꯛ', 'Lairik', 'लाइरिक'], hi: ['किताब', 'Kitaab'], ko: ['책', 'Chaek'] }
     ];
     const languages = [
-        { key: 'mni', name: 'Manipuri', voice: null },
+        { key: 'mni', name: 'Manipuri', voice: 'hi-IN' },
         { key: 'hi', name: 'Hindi', voice: 'hi-IN' },
         { key: 'ko', name: 'Korean', voice: 'ko-KR' },
         { key: 'en', name: 'English', voice: 'en-US' }
@@ -3150,13 +3101,15 @@
                 <span class="tile-lang">${language.name}</span>
                 <span class="tile-word"${langAttr}>${text}</span>
                 <span class="tile-roman">${roman}</span>`;
-            if (canSpeak && language.voice) {
+            if (canSpeak) {
                 const button = document.createElement('button');
                 button.className = 'speak';
                 button.type = 'button';
                 button.setAttribute('aria-label', `Listen in ${language.name}`);
                 button.innerHTML = '<svg class="icon"><use href="#i-volume"/></svg>';
-                button.addEventListener('click', () => speak(text, language.voice));
+                // Browsers have no Manipuri voice, so Manipuri is read from its phonetic Hindi-script spelling
+                const spoken = language.key === 'mni' ? word.mni[2] : text;
+                button.addEventListener('click', () => speak(spoken, language.voice));
                 tile.appendChild(button);
             }
             tiles.appendChild(tile);
@@ -3196,8 +3149,6 @@
     const typingTarget = document.getElementById('typing-target');
     const typingRef = document.getElementById('typing-ref');
     const typingInput = document.getElementById('typing-input');
-    const keypad = document.getElementById('keypad');
-    const typingHint = document.getElementById('typing-hint');
     const wpmEl = document.getElementById('wpm');
     const accuracyEl = document.getElementById('accuracy');
     const resultEl = document.getElementById('typing-result');
@@ -3240,32 +3191,6 @@
         renderTarget('');
     }
 
-    function buildKeypad() {
-        const letters = [...new Set(typingModes.mni.text.replace(/ /g, ''))].sort();
-        keypad.innerHTML = '';
-        const addKey = (label, value, wide) => {
-            const key = document.createElement('button');
-            key.type = 'button';
-            key.className = wide ? 'key wide' : 'key';
-            key.textContent = label;
-            key.dataset.value = value;
-            if (!wide) key.lang = 'mni';
-            keypad.appendChild(key);
-        };
-        // Vowel signs are shown on a dotted circle so they are visible on their own
-        letters.forEach((letter) => addKey(/\p{M}/u.test(letter) ? '◌' + letter : letter, letter, false));
-        addKey('Space', ' ', true);
-        addKey('⌫ Delete', 'backspace', true);
-    }
-
-    keypad.addEventListener('click', (event) => {
-        const key = event.target.closest('.key');
-        if (!key || typingDone) return;
-        const value = key.dataset.value;
-        typingInput.value = value === 'backspace' ? typingInput.value.slice(0, -1) : typingInput.value + value;
-        typingInput.dispatchEvent(new Event('input'));
-    });
-
     function setTypingMode(mode) {
         typingMode = mode;
         const config = typingModes[mode];
@@ -3277,8 +3202,6 @@
         typingInput.placeholder = config.placeholder;
         typingInput.lang = mode;
         typingTarget.lang = mode;
-        keypad.hidden = mode !== 'mni';
-        typingHint.hidden = mode !== 'mni';
         resetTyping();
     }
 
@@ -3317,7 +3240,6 @@
         resetTyping();
         typingInput.focus();
     });
-    buildKeypad();
     setTypingMode('en');
 
     // ---------- Visitor counter (free Abacus counter API, https://abacus.jasoncameron.dev) ----------
