@@ -902,13 +902,13 @@
         /* ---------- Services ---------- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
         .service {
             position: relative;
-            padding: 32px 26px 34px;
+            padding: 34px 32px 36px;
             transition: transform 0.45s var(--ease), box-shadow 0.45s, border-color 0.45s;
         }
 
@@ -954,7 +954,7 @@
 
         .service h3 {
             margin-bottom: 10px;
-            font-size: 26px;
+            font-size: 28px;
         }
 
         .service p {
@@ -1234,15 +1234,23 @@
         }
 
         /* ---------- Play ---------- */
+        /* Two equal cards, always the same height */
         .play-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .play-card {
+            display: flex;
+            flex-direction: column;
             padding: 36px;
+        }
+
+        .play-card #typing-reset {
+            align-self: flex-start;
+            margin-top: auto;
         }
 
         .play-card h3 {
@@ -1284,14 +1292,20 @@
             background-color: var(--berry);
         }
 
+        /* The word tiles grow to fill the card, matching the typing card's height */
         .tiles {
+            flex: 1;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr;
             gap: 12px;
         }
 
         .tile {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding: 18px 20px;
             background-color: var(--bg);
             border: 1px solid var(--line);
@@ -2079,9 +2093,14 @@
             }
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 860px) {
             .services-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            /* With two columns, let the ninth card span the full row */
+            .services-grid > .service:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
             }
         }
 
@@ -2238,6 +2257,7 @@
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
     <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
@@ -2416,7 +2436,7 @@
         <div class="section-head reveal">
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Services</span>
             <h2>How I can <em>help</em></h2>
-            <p>Eight ways I can support your language project.</p>
+            <p>Nine ways I can support your language project.</p>
         </div>
         <div class="services-grid">
             <article class="card service reveal">
@@ -2437,35 +2457,41 @@
                 <h3>Transliteration</h3>
                 <p>Accurate transliteration of Manipuri text between Meetei Mayek and other scripts, including romanization.</p>
             </article>
-            <article class="card service reveal d3">
+            <article class="card service reveal">
                 <span class="service-num" aria-hidden="true">04</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-file"/></svg></div>
                 <h3>Transcription</h3>
                 <p>Accurate Manipuri audio transcription to strict quality standards.</p>
             </article>
-            <article class="card service reveal">
+            <article class="card service reveal d1">
                 <span class="service-num" aria-hidden="true">05</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-mic"/></svg></div>
                 <h3>Speech Data</h3>
                 <p>Clear voice recordings and linguistic data collection for speech technology.</p>
             </article>
-            <article class="card service reveal d1">
-                <span class="service-num" aria-hidden="true">06</span>
-                <div class="service-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
-                <h3>Quality Review</h3>
-                <p>Audio validation and proofreading, so every file meets the project guidelines.</p>
-            </article>
             <article class="card service reveal d2">
+                <span class="service-num" aria-hidden="true">06</span>
+                <div class="service-icon"><svg class="icon"><use href="#i-headphones"/></svg></div>
+                <h3>Audio Validation</h3>
+                <p>Checking recordings for clarity, accuracy and compliance with project guidelines.</p>
+            </article>
+            <article class="card service reveal">
                 <span class="service-num" aria-hidden="true">07</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-tag"/></svg></div>
                 <h3>NLP Annotation</h3>
                 <p>POS tagging, NER annotation and dataset preparation for NLP and AI applications.</p>
             </article>
-            <article class="card service reveal d3">
+            <article class="card service reveal d1">
                 <span class="service-num" aria-hidden="true">08</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-captions"/></svg></div>
                 <h3>Subtitles</h3>
                 <p>Natural, context-preserving Manipuri subtitles for video content.</p>
+            </article>
+            <article class="card service reveal d2">
+                <span class="service-num" aria-hidden="true">09</span>
+                <div class="service-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+                <h3>Reviewer</h3>
+                <p>Reviewing translations and transcripts by other linguists to verify accuracy, consistency and quality.</p>
             </article>
         </div>
     </div>
@@ -2776,6 +2802,7 @@
                         <label><input type="radio" name="project_type" value="Speech data"><span>Speech data</span></label>
                         <label><input type="radio" name="project_type" value="Annotation"><span>Annotation</span></label>
                         <label><input type="radio" name="project_type" value="Subtitles"><span>Subtitles</span></label>
+                        <label><input type="radio" name="project_type" value="Review"><span>Review</span></label>
                         <label><input type="radio" name="project_type" value="Something else"><span>Something else</span></label>
                     </div>
                 </fieldset>
