@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laishram Thoibisana · Manipuri Language Expert</title>
-    <meta name="description" content="Laishram Thoibisana is a native Manipuri language expert in Imphal, India, offering translation, transcription, speech data and NLP annotation in Manipuri, English, Hindi and Korean.">
+    <title>Thoibisana Laishram · Manipuri Language Expert</title>
+    <meta name="description" content="Thoibisana Laishram is a native Manipuri language expert in Imphal, India, offering translation, transcription, speech data and NLP annotation in Manipuri, English, Hindi and Korean.">
     <meta name="theme-color" content="#C2185B">
     <link rel="canonical" href="https://hellothoi.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hellothoi.github.io/">
-    <meta property="og:title" content="Laishram Thoibisana · Manipuri Language Expert">
+    <meta property="og:title" content="Thoibisana Laishram · Manipuri Language Expert">
     <meta property="og:description" content="Translation, transcription and language data in Manipuri, English, Hindi and Korean.">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23C2185B'/%3E%3Cpath d='M32 49s-15-9.2-18.2-18.6C11.7 24 15.6 16.6 22.6 16.8c4 .1 6.9 2.3 9.4 5.6 2.5-3.3 5.4-5.5 9.4-5.6 7-.2 10.9 7.2 8.8 13.6C47 39.8 32 49 32 49z' fill='%23FDE2EC'/%3E%3C/svg%3E">
+    <meta property="og:image" content="https://hellothoi.github.io/assets/erol.png">
+    <link rel="icon" type="image/png" href="assets/erol-logo.png">
+    <link rel="apple-touch-icon" href="assets/erol-logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +23,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Laishram Thoibisana",
-        "alternateName": "Laishram Thoibisana Devi",
+        "name": "Thoibisana Laishram",
+        "alternateName": ["Laishram Thoibisana", "Laishram Thoibisana Devi"],
         "jobTitle": "Manipuri Language Expert",
         "url": "https://hellothoi.github.io/",
         "email": "mailto:thoiclare@gmail.com",
@@ -192,10 +194,19 @@
             color: var(--rose);
         }
 
+        /* Solid page areas; the background video only shows through the hero and the quote band */
+        .paper {
+            position: relative;
+            background-color: var(--bg);
+        }
+
+        .paper-top {
+            padding-bottom: 120px;
+        }
+
         .section {
             position: relative;
             padding: 120px 0 0;
-            background-color: var(--bg);
         }
 
         .section-head {
@@ -353,7 +364,7 @@
             justify-content: space-between;
             gap: 16px;
             width: min(1180px, calc(100% - 32px));
-            padding: 8px 8px 8px 26px;
+            padding: 8px 8px 8px 10px;
             background-color: rgba(255, 255, 255, 0.86);
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-radius: 999px;
@@ -363,12 +374,23 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-family: var(--script);
             font-size: 32px;
             line-height: 1;
             color: var(--berry);
             text-decoration: none;
             white-space: nowrap;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            border: 2px solid var(--bg-pink);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px -4px rgba(61, 31, 51, 0.35);
         }
 
         .nav-links {
@@ -699,7 +721,7 @@
         }
 
         .hearts .icon:nth-child(1) { top: 18%; left: 52%; width: 26px; height: 26px; }
-        .hearts .icon:nth-child(2) { top: 70%; left: 8%; width: 18px; height: 18px; animation-delay: -2s; }
+        .hearts .icon:nth-child(2) { top: 90%; left: 40%; width: 18px; height: 18px; animation-delay: -2s; }
         .hearts .icon:nth-child(3) { top: 24%; right: 6%; width: 34px; height: 34px; animation-delay: -4s; }
         .hearts .icon:nth-child(4) { bottom: 22%; right: 30%; width: 16px; height: 16px; animation-delay: -6s; }
         .hearts .icon:nth-child(5) { top: 12%; left: 6%; width: 14px; height: 14px; animation-delay: -1s; }
@@ -792,7 +814,7 @@
         .signature {
             margin: 26px 0 0;
             font-family: var(--script);
-            font-size: 54px;
+            font-size: 64px;
             line-height: 1;
             color: var(--berry);
         }
@@ -1158,6 +1180,48 @@
             color: var(--rose-soft);
         }
 
+        .research-top {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 56px;
+            align-items: center;
+        }
+
+        /* EROL image, styled like a taped photo */
+        .erol-photo {
+            position: relative;
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.6);
+            transform: rotate(3deg);
+            transition: transform 0.5s var(--ease);
+        }
+
+        .erol-photo:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .erol-photo::before {
+            content: "";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            width: 100px;
+            height: 28px;
+            background-color: rgba(247, 179, 202, 0.85);
+            border-radius: 3px;
+            transform: translateX(-50%) rotate(-4deg);
+        }
+
+        .erol-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
         .research-card h2 {
             max-width: 900px;
             font-size: clamp(32px, 4.2vw, 52px);
@@ -1517,7 +1581,6 @@
         .quote {
             position: relative;
             isolation: isolate;
-            margin-top: 120px;
             padding: 150px 0;
             text-align: center;
             color: #fff;
@@ -1772,6 +1835,7 @@
         }
 
         .contact-list .service-icon {
+            display: grid;
             width: 42px;
             height: 42px;
             margin: 0;
@@ -1992,6 +2056,62 @@
             color: var(--rose);
         }
 
+        /* Resume viewer */
+        .resume-dialog {
+            width: min(880px, calc(100% - 24px));
+            max-width: none;
+            max-height: calc(100vh - 32px);
+            max-height: calc(100dvh - 32px);
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+            border: 0;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 40px 80px -30px rgba(42, 20, 36, 0.6);
+            overflow: hidden;
+        }
+
+        .resume-dialog[open] {
+            display: flex;
+            flex-direction: column;
+            animation: pop 0.4s var(--ease);
+        }
+
+        .resume-dialog::backdrop {
+            background-color: rgba(42, 20, 36, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .resume-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 14px 14px 28px;
+            background-color: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .resume-head h2 {
+            font-size: 30px;
+        }
+
+        .resume-body {
+            flex: 1;
+            padding: 22px;
+            overflow: auto;
+            overscroll-behavior: contain;
+            background-color: var(--bg-soft);
+        }
+
+        .resume-body img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
         .to-top {
             position: fixed;
             right: 22px;
@@ -2036,7 +2156,7 @@
             }
 
             .nav {
-                padding: 6px 6px 6px 22px;
+                padding: 6px 6px 6px 8px;
             }
         }
 
@@ -2067,6 +2187,16 @@
                 position: static;
             }
 
+            .research-top {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+
+            .erol-photo {
+                justify-self: center;
+                width: min(280px, 100%);
+            }
+
             .research-card,
             .connect {
                 padding: 48px 36px;
@@ -2086,9 +2216,12 @@
                 padding-top: 88px;
             }
 
-            .marquee,
-            .quote {
+            .marquee {
                 margin-top: 88px;
+            }
+
+            .paper-top {
+                padding-bottom: 88px;
             }
 
             .quote {
@@ -2144,6 +2277,18 @@
             .scroll-cue span {
                 display: none;
             }
+
+            .resume-head {
+                padding: 10px 10px 10px 20px;
+            }
+
+            .resume-head h2 {
+                font-size: 26px;
+            }
+
+            .resume-body {
+                padding: 12px;
+            }
         }
 
         @media (max-width: 420px) {
@@ -2194,14 +2339,14 @@
     <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
-    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14"/><path d="M15 5v14"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4.5" width="4" height="15" rx="1.2"/><rect x="14" y="4.5" width="4" height="15" rx="1.2"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
@@ -2222,7 +2367,9 @@
 
 <!-- Navigation -->
 <header class="nav">
-    <a class="logo" href="#top" aria-label="Thoibisana, back to top">Thoibisana</a>
+    <a class="logo" href="#top" aria-label="Thoibisana, back to top">
+        <img class="logo-mark" src="assets/erol-logo.png" alt="" width="42" height="42">Thoibisana
+    </a>
     <nav aria-label="Main">
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
@@ -2234,8 +2381,8 @@
         </ul>
     </nav>
     <div class="nav-actions">
-        <a class="btn btn-outline btn-sm" href="resume.pdf" target="_blank" rel="noopener">
-            <svg class="icon"><use href="#i-download"/></svg> CV
+        <a class="btn btn-outline btn-sm" href="resume.pdf" target="_blank" rel="noopener" data-resume>
+            <svg class="icon"><use href="#i-eye"/></svg> Resume
         </a>
         <a class="btn btn-primary btn-sm" href="#contact">Let's talk</a>
         <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
@@ -2247,7 +2394,7 @@
 <!-- Mobile menu -->
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="menu-top">
-        <span class="logo">Thoibisana</span>
+        <span class="logo"><img class="logo-mark" src="assets/erol-logo.png" alt="" width="42" height="42">Thoibisana</span>
         <button class="menu-close" id="menu-close" aria-label="Close menu">
             <svg class="icon"><use href="#i-close"/></svg>
         </button>
@@ -2260,8 +2407,8 @@
         <li><a href="#play">Play</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">
-        <svg class="icon"><use href="#i-download"/></svg> Download my CV
+    <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener" data-resume>
+        <svg class="icon"><use href="#i-eye"/></svg> View my resume
     </a>
 </div>
 
@@ -2284,8 +2431,8 @@
         <div>
             <span class="available"><span class="dot"></span> Open to new projects</span>
             <span class="hero-kicker">Native Manipuri Language Expert</span>
-            <h1>Laishram <em>Thoibisana</em></h1>
-            <p class="hero-native" lang="mni">ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</p>
+            <h1><em>Thoibisana</em> Laishram</h1>
+            <p class="hero-native" lang="mni">ꯊꯣꯏꯕꯤꯁꯥꯅꯥ ꯂꯥꯏꯁ꯭ꯔꯝ</p>
             <p class="hero-lead">
                 I translate, transcribe and record language data in Manipuri, English, Hindi and Korean
                 for research teams, language consultancies and AI projects.
@@ -2294,8 +2441,8 @@
                 <a class="btn btn-primary" href="#contact">
                     <svg class="icon"><use href="#i-mail"/></svg> Work with me
                 </a>
-                <a class="btn btn-glass" href="resume.pdf" target="_blank" rel="noopener">
-                    <svg class="icon"><use href="#i-download"/></svg> Download CV
+                <a class="btn btn-glass" href="resume.pdf" target="_blank" rel="noopener" data-resume>
+                    <svg class="icon"><use href="#i-eye"/></svg> View resume
                 </a>
                 <a class="btn btn-glass btn-round" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <svg class="icon icon-fill"><use href="#i-linkedin"/></svg>
@@ -2328,6 +2475,7 @@
 </section>
 
 <main id="main">
+<div class="paper paper-top">
 
 <!-- About -->
 <section class="section about" id="about">
@@ -2467,8 +2615,8 @@
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Experience</span>
             <h2>Where I've <em>worked</em></h2>
             <p>Freelance language work with research institutes, AI data companies and translation agencies, all remote from Imphal.</p>
-            <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">
-                <svg class="icon"><use href="#i-download"/></svg> Download my CV
+            <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener" data-resume>
+                <svg class="icon"><use href="#i-eye"/></svg> View my resume
             </a>
         </div>
 
@@ -2570,17 +2718,24 @@
 <section class="section" id="research">
     <div class="container">
         <div class="research-card reveal">
-            <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
-            <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
-            <div class="pub-meta">
-                <span class="pill">Publication</span>
-                <span class="pill">WMT 2026</span>
+            <div class="research-top">
+                <div>
+                    <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
+                    <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
+                    <div class="pub-meta">
+                        <span class="pill">Publication</span>
+                        <span class="pill">WMT 2026</span>
+                    </div>
+                    <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (University of Houston)</p>
+                    <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
+                    <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                        View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
+                    </a>
+                </div>
+                <figure class="erol-photo">
+                    <img src="assets/erol.png" alt="A vintage typewriter typing the word EROL" width="560" height="558" loading="lazy">
+                </figure>
             </div>
-            <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (University of Houston)</p>
-            <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
-            <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-                View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
-            </a>
 
             <div class="project">
                 <span class="project-icon"><svg class="icon"><use href="#i-globe"/></svg></span>
@@ -2635,15 +2790,19 @@
     </div>
 </section>
 
+</div>
+
 <!-- Quote over the background video -->
 <div class="quote">
     <div class="scallop scallop-down" aria-hidden="true"></div>
     <div class="container reveal">
         <blockquote>My love is in the language.</blockquote>
-        <cite>Laishram Thoibisana</cite>
+        <cite>Thoibisana Laishram</cite>
     </div>
     <div class="scallop scallop-up" aria-hidden="true"></div>
 </div>
+
+<div class="paper">
 
 <!-- Education -->
 <section class="section" id="education">
@@ -2698,7 +2857,7 @@
                         <div>
                             <h4>Typing Test Certification</h4>
                             <span class="entry-org">Typing.com</span>
-                            <p>42 WPM · 98% accuracy · Credential ID: 305972911-158006147</p>
+                            <p>42 WPM · 98% accuracy<br>Credential ID: 305972911-158006147</p>
                         </div>
                     </div>
                 </div>
@@ -2708,10 +2867,10 @@
         <div class="cv-card reveal">
             <div>
                 <h3>Prefer a one-page summary?</h3>
-                <p>Download my CV as a PDF.</p>
+                <p>Have a look at my one-page resume.</p>
             </div>
-            <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">
-                <svg class="icon"><use href="#i-download"/></svg> Download CV
+            <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener" data-resume>
+                <svg class="icon"><use href="#i-eye"/></svg> View resume
             </a>
         </div>
     </div>
@@ -2818,6 +2977,7 @@
     </div>
 </section>
 
+</div>
 </main>
 
 <!-- Footer -->
@@ -2830,11 +2990,24 @@
             <li><a href="mailto:thoiclare@gmail.com"><svg class="icon"><use href="#i-mail"/></svg>Email</a></li>
             <li><a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
             <li><a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="icon icon-fill"><use href="#i-scholar"/></svg>Google Scholar</a></li>
-            <li><a href="resume.pdf" target="_blank" rel="noopener"><svg class="icon"><use href="#i-download"/></svg>CV</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noopener" data-resume><svg class="icon"><use href="#i-eye"/></svg>Resume</a></li>
         </ul>
-        <p class="copyright">© 2026 Laishram Thoibisana · Made with <svg class="icon icon-fill" role="img" aria-label="love"><use href="#i-heart"/></svg> in Imphal</p>
+        <p class="copyright">© 2026 Thoibisana Laishram · Made with <svg class="icon icon-fill" role="img" aria-label="love"><use href="#i-heart"/></svg> in Imphal</p>
     </div>
 </footer>
+
+<!-- Resume viewer -->
+<dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-title">
+    <div class="resume-head">
+        <h2 id="resume-title">My <em>resume</em></h2>
+        <button class="menu-close" type="button" id="resume-close" aria-label="Close resume">
+            <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+    </div>
+    <div class="resume-body">
+        <img src="assets/resume.png" alt="One-page resume of Thoibisana Laishram with profile, experience, projects, education, languages, skills and certifications." width="1240" height="1754" loading="lazy">
+    </div>
+</dialog>
 
 <button class="to-top" id="to-top" aria-label="Back to top">
     <svg class="icon"><use href="#i-up"/></svg>
@@ -2855,7 +3028,7 @@
         const frame = document.createElement('iframe');
         frame.className = 'post-frame';
         frame.src = src;
-        frame.title = 'LinkedIn post by Laishram Thoibisana';
+        frame.title = 'LinkedIn post by Thoibisana Laishram';
         frame.loading = 'lazy';
         posts.appendChild(frame);
     });
@@ -2918,11 +3091,31 @@
     menuOpen.addEventListener('click', () => setMenu(true));
     menuClose.addEventListener('click', () => setMenu(false));
     menu.addEventListener('click', (event) => {
-        if (event.target.closest('a')) setMenu(false);
+        if (event.target.closest('a') && !event.target.closest('[data-resume]')) setMenu(false);
     });
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && menu.classList.contains('open')) setMenu(false);
     });
+
+    // ---------- Resume viewer (falls back to opening the PDF if <dialog> is not supported) ----------
+    const resumeDialog = document.getElementById('resume-dialog');
+    if (typeof resumeDialog.showModal === 'function') {
+        document.querySelectorAll('[data-resume]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (menu.classList.contains('open')) setMenu(false);
+                resumeDialog.showModal();
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        document.getElementById('resume-close').addEventListener('click', () => resumeDialog.close());
+        resumeDialog.addEventListener('click', (event) => {
+            if (event.target === resumeDialog) resumeDialog.close();
+        });
+        resumeDialog.addEventListener('close', () => {
+            document.body.style.overflow = '';
+        });
+    }
 
     // ---------- Observers: reveal, active menu link, count-up ----------
     if ('IntersectionObserver' in window) {
