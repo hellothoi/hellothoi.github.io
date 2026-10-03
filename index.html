@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://hellothoi.github.io/">
     <meta property="og:title" content="Thoibisana Laishram · Manipuri Language Expert">
     <meta property="og:description" content="Translation, transcription and language data in Manipuri, English, Hindi and Korean.">
-    <meta property="og:image" content="https://hellothoi.github.io/assets/erol.png">
+    <meta property="og:image" content="https://hellothoi.github.io/assets/erol-logo.png">
     <link rel="icon" type="image/png" href="assets/erol-logo.png">
     <link rel="apple-touch-icon" href="assets/erol-logo.png">
 
@@ -811,7 +811,7 @@
             font-size: 18.5px;
         }
 
-        .signature {
+        .about-text .signature {
             margin: 26px 0 0;
             font-family: var(--script);
             font-size: 64px;
@@ -1180,48 +1180,6 @@
             color: var(--rose-soft);
         }
 
-        .research-top {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 56px;
-            align-items: center;
-        }
-
-        /* EROL image, styled like a taped photo */
-        .erol-photo {
-            position: relative;
-            margin: 0;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.6);
-            transform: rotate(3deg);
-            transition: transform 0.5s var(--ease);
-        }
-
-        .erol-photo:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-
-        .erol-photo::before {
-            content: "";
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            width: 100px;
-            height: 28px;
-            background-color: rgba(247, 179, 202, 0.85);
-            border-radius: 3px;
-            transform: translateX(-50%) rotate(-4deg);
-        }
-
-        .erol-photo img {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
         .research-card h2 {
             max-width: 900px;
             font-size: clamp(32px, 4.2vw, 52px);
@@ -1561,7 +1519,7 @@
             color: var(--plum);
         }
 
-        .typing-result {
+        .play-card .typing-result {
             min-height: 1.7em;
             margin: 8px 0 16px;
             font-weight: 700;
@@ -2044,6 +2002,38 @@
             color: var(--rose-soft);
         }
 
+        .visitors {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            margin: 0 auto 28px;
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 999px;
+        }
+
+        .visitors[hidden] {
+            display: none;
+        }
+
+        .visitors .icon {
+            width: 15px;
+            height: 15px;
+            color: var(--rose);
+        }
+
+        .visitors strong {
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--rose-soft);
+        }
+
         .copyright {
             margin: 0;
             font-size: 13.5px;
@@ -2187,16 +2177,6 @@
                 position: static;
             }
 
-            .research-top {
-                grid-template-columns: 1fr;
-                gap: 44px;
-            }
-
-            .erol-photo {
-                justify-self: center;
-                width: min(280px, 100%);
-            }
-
             .research-card,
             .connect {
                 padding: 48px 36px;
@@ -2242,7 +2222,8 @@
             }
 
             .hero-actions .btn:not(.btn-round) {
-                flex: 1 1 auto;
+                flex: 1 1 calc(50% - 6px);
+                padding: 0 16px;
             }
 
             .glance,
@@ -2381,10 +2362,7 @@
         </ul>
     </nav>
     <div class="nav-actions">
-        <a class="btn btn-outline btn-sm" href="resume.pdf" target="_blank" rel="noopener" data-resume>
-            <svg class="icon"><use href="#i-eye"/></svg> Resume
-        </a>
-        <a class="btn btn-primary btn-sm" href="#contact">Let's talk</a>
+        <a class="btn btn-primary btn-sm" href="resume.pdf" target="_blank" rel="noopener" data-resume>Resume</a>
         <button class="menu-btn" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
             <svg class="icon"><use href="#i-menu"/></svg>
         </button>
@@ -2407,9 +2385,7 @@
         <li><a href="#play">Play</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener" data-resume>
-        <svg class="icon"><use href="#i-eye"/></svg> View my resume
-    </a>
+    <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener" data-resume>View my resume</a>
 </div>
 
 <!-- Background video -->
@@ -2440,15 +2416,6 @@
             <div class="hero-actions">
                 <a class="btn btn-primary" href="#contact">
                     <svg class="icon"><use href="#i-mail"/></svg> Work with me
-                </a>
-                <a class="btn btn-glass" href="resume.pdf" target="_blank" rel="noopener" data-resume>
-                    <svg class="icon"><use href="#i-eye"/></svg> View resume
-                </a>
-                <a class="btn btn-glass btn-round" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg class="icon icon-fill"><use href="#i-linkedin"/></svg>
-                </a>
-                <a class="btn btn-glass btn-round" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
-                    <svg class="icon icon-fill"><use href="#i-scholar"/></svg>
                 </a>
             </div>
         </div>
@@ -2484,17 +2451,10 @@
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>About me</span>
             <h2>Hello, I'm <em>Thoibisana</em></h2>
             <p>
-                I am a professional Manipuri linguist specializing in translation and transcription.
-                I work with academic institutions, language consultancies, and global platforms,
-                delivering accurate, high-quality linguistic data in Manipuri, English, Hindi, and Korean,
-                including translation into the Meetei Mayek script.
+                I am a professional Manipuri linguist based in Imphal. Accuracy, cultural nuance and
+                respect for the Meetei Mayek script are at the heart of everything I deliver, whether
+                it is a document, a voice recording or a research dataset.
             </p>
-            <p>
-                My recent work spans speech data recording and validation, NLP annotation for IIT Guwahati,
-                and subtitle translation for YouTube. I care deeply about language technology, corpus
-                development and machine translation for the Manipuri language.
-            </p>
-            <p class="signature" aria-hidden="true">Thoibisana</p>
             <ul class="loves">
                 <li class="pill"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Preserving Meetei Mayek</li>
                 <li class="pill"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Low-resource machine translation</li>
@@ -2614,10 +2574,7 @@
         <div class="exp-intro reveal">
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Experience</span>
             <h2>Where I've <em>worked</em></h2>
-            <p>Freelance language work with research institutes, AI data companies and translation agencies, all remote from Imphal.</p>
-            <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener" data-resume>
-                <svg class="icon"><use href="#i-eye"/></svg> View my resume
-            </a>
+            <p>All freelance and remote from Imphal. Tap a role to read more.</p>
         </div>
 
         <div class="jobs">
@@ -2718,24 +2675,16 @@
 <section class="section" id="research">
     <div class="container">
         <div class="research-card reveal">
-            <div class="research-top">
-                <div>
-                    <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
-                    <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
-                    <div class="pub-meta">
-                        <span class="pill">Publication</span>
-                        <span class="pill">WMT 2026</span>
-                    </div>
-                    <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (University of Houston)</p>
-                    <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
-                    <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-                        View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
-                    </a>
-                </div>
-                <figure class="erol-photo">
-                    <img src="assets/erol.png" alt="A vintage typewriter typing the word EROL" width="560" height="558" loading="lazy">
-                </figure>
+            <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
+            <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
+            <div class="pub-meta">
+                <span class="pill">Publication</span>
             </div>
+            <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (University of Houston)</p>
+            <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
+            <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
 
             <div class="project">
                 <span class="project-icon"><svg class="icon"><use href="#i-globe"/></svg></span>
@@ -2811,67 +2760,45 @@
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Background</span>
             <h2>Education &amp; <em>certificates</em></h2>
         </div>
-        <div class="edu-grid">
-            <div class="reveal">
-                <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>Education</h3>
-                <div class="entries">
-                    <div class="card entry">
-                        <span class="entry-date">2025 – 2026</span>
-                        <div>
-                            <h4>Higher National Diploma, Korean Language &amp; Literature</h4>
-                            <span class="entry-org">Nalanda University</span>
-                        </div>
-                    </div>
-                    <div class="card entry">
-                        <span class="entry-date">2019 – 2022</span>
-                        <div>
-                            <h4>Bachelor of Arts in Education</h4>
-                            <span class="entry-org">Manipur University</span>
-                            <p>First Class Honors</p>
-                        </div>
-                    </div>
-                    <div class="card entry">
-                        <span class="entry-date">2017 – 2019</span>
-                        <div>
-                            <h4>Intermediate, Science</h4>
-                            <span class="entry-org">Waikhom Mani Girls' College</span>
-                            <p>Physics, Chemistry, Biology and Mathematics</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="reveal d2">
-                <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-award"/></svg></span>Certificates</h3>
-                <div class="entries">
-                    <div class="card entry">
-                        <span class="entry-date">Jun 2025</span>
-                        <div>
-                            <h4>Certificate of Proficiency in Korean</h4>
-                            <span class="entry-org">Nalanda University</span>
-                            <p>Credential ID: CLK/25-S/KOR24</p>
-                        </div>
-                    </div>
-                    <div class="card entry">
-                        <span class="entry-date">Aug 2024</span>
-                        <div>
-                            <h4>Typing Test Certification</h4>
-                            <span class="entry-org">Typing.com</span>
-                            <p>42 WPM · 98% accuracy<br>Credential ID: 305972911-158006147</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="edu-block reveal">
+            <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>Education</h3>
+            <div class="edu-cards edu-cards-3">
+                <article class="card edu-card">
+                    <span class="date-pill">2025 – 2026</span>
+                    <h4>Higher National Diploma, Korean Language &amp; Literature</h4>
+                    <span class="entry-org">Nalanda University</span>
+                </article>
+                <article class="card edu-card">
+                    <span class="date-pill">2019 – 2022</span>
+                    <h4>Bachelor of Arts in Education</h4>
+                    <span class="entry-org">Manipur University</span>
+                    <p>First Class Honors</p>
+                </article>
+                <article class="card edu-card">
+                    <span class="date-pill">2017 – 2019</span>
+                    <h4>Intermediate, Science</h4>
+                    <span class="entry-org">Waikhom Mani Girls' College</span>
+                    <p>Physics, Chemistry, Biology and Mathematics</p>
+                </article>
             </div>
         </div>
 
-        <div class="cv-card reveal">
-            <div>
-                <h3>Prefer a one-page summary?</h3>
-                <p>Have a look at my one-page resume.</p>
+        <div class="edu-block reveal">
+            <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-award"/></svg></span>Certificates</h3>
+            <div class="edu-cards edu-cards-2">
+                <article class="card edu-card">
+                    <span class="date-pill">Jun 2025</span>
+                    <h4>Certificate of Proficiency in Korean</h4>
+                    <span class="entry-org">Nalanda University</span>
+                    <p>Credential ID: CLK/25-S/KOR24</p>
+                </article>
+                <article class="card edu-card">
+                    <span class="date-pill">Aug 2024</span>
+                    <h4>Typing Test Certification</h4>
+                    <span class="entry-org">Typing.com</span>
+                    <p>42 WPM at 98% accuracy · Credential ID: 305972911-158006147</p>
+                </article>
             </div>
-            <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener" data-resume>
-                <svg class="icon"><use href="#i-eye"/></svg> View resume
-            </a>
         </div>
     </div>
 </section>
@@ -2912,21 +2839,9 @@
                 </button>
             </div>
 
-            <ul class="contact-list">
-                <li>
-                    <a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
-                        <span class="service-icon"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg></span>linkedin.com/in/hellothoi
-                    </a>
-                </li>
-                <li>
-                    <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-                        <span class="service-icon"><svg class="icon icon-fill"><use href="#i-scholar"/></svg></span>Google Scholar profile
-                    </a>
-                </li>
-                <li>
-                    <span><span class="service-icon"><svg class="icon"><use href="#i-pin"/></svg></span>Imphal, Manipur, India · Working remotely worldwide</span>
-                </li>
-            </ul>
+            <p class="location">
+                <span class="service-icon"><svg class="icon"><use href="#i-pin"/></svg></span>Imphal, Manipur, India · Working remotely worldwide
+            </p>
         </div>
 
         <div class="card form-card reveal d2">
@@ -2986,12 +2901,10 @@
         <span class="thanks-native" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span>
         <p class="thanks">Thank you for visiting</p>
         <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
-        <ul class="footer-links">
-            <li><a href="mailto:thoiclare@gmail.com"><svg class="icon"><use href="#i-mail"/></svg>Email</a></li>
-            <li><a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
-            <li><a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="icon icon-fill"><use href="#i-scholar"/></svg>Google Scholar</a></li>
-            <li><a href="resume.pdf" target="_blank" rel="noopener" data-resume><svg class="icon"><use href="#i-eye"/></svg>Resume</a></li>
-        </ul>
+        <p class="visitors" id="visitors" hidden>
+            <svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
+            <span><strong id="visitor-count">0</strong> lovely visitors so far</span>
+        </p>
         <p class="copyright">© 2026 Thoibisana Laishram · Made with <svg class="icon icon-fill" role="img" aria-label="love"><use href="#i-heart"/></svg> in Imphal</p>
     </div>
 </footer>
@@ -3423,6 +3336,32 @@
     });
     buildKeypad();
     setTypingMode('en');
+
+    // ---------- Visitor counter (free Abacus counter API, https://abacus.jasoncameron.dev) ----------
+    // Each browser is counted once. Local previews (opening the file on your computer) are never counted.
+    (async () => {
+        const counterUrl = 'https://abacus.jasoncameron.dev';
+        const counterKey = 'hellothoi.github.io/visitors';
+        const isLive = location.protocol.startsWith('http') && !['localhost', '127.0.0.1'].includes(location.hostname);
+        let counted = false;
+        try { counted = localStorage.getItem('visitor-counted') === '1'; } catch (error) {}
+
+        try {
+            const shouldCount = isLive && !counted;
+            let response = await fetch(`${counterUrl}/${shouldCount ? 'hit' : 'get'}/${counterKey}`);
+            // The counter is created on its first hit; a missing counter means nobody has been counted yet
+            if (response.status === 404 && isLive) response = await fetch(`${counterUrl}/hit/${counterKey}`);
+            if (!response.ok) return;
+            const { value } = await response.json();
+            if (isLive) {
+                try { localStorage.setItem('visitor-counted', '1'); } catch (error) {}
+            }
+            document.getElementById('visitor-count').textContent = Number(value).toLocaleString();
+            document.getElementById('visitors').hidden = false;
+        } catch (error) {
+            // Counter service unavailable: keep the badge hidden
+        }
+    })();
 
     // ---------- Copy email ----------
     const copyButton = document.getElementById('copy-email');
