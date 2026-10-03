@@ -1948,10 +1948,17 @@
         }
 
         .thanks {
-            margin: 6px 0 36px;
+            margin: 6px 0 22px;
             font-family: var(--script);
             font-size: clamp(30px, 4vw, 42px);
             color: #fff;
+        }
+
+        footer .verse {
+            margin: 0 auto 40px;
+            max-width: 520px;
+            font-size: 19px;
+            color: rgba(255, 247, 249, 0.8);
         }
 
         .visitors {
@@ -2297,7 +2304,7 @@
 
 <!-- Navigation -->
 <header class="nav">
-    <a class="logo" href="#top" aria-label="Thoibisana, back to top">
+    <a class="logo" href="https://hellothoi.github.io/" aria-label="Thoibisana, home page">
         <img class="logo-mark" src="assets/erol-logo.png" alt="" width="42" height="42">Thoibisana
     </a>
     <nav aria-label="Main">
@@ -2321,7 +2328,7 @@
 <!-- Mobile menu -->
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="menu-top">
-        <span class="logo"><img class="logo-mark" src="assets/erol-logo.png" alt="" width="42" height="42">Thoibisana</span>
+        <a class="logo" href="https://hellothoi.github.io/" aria-label="Thoibisana, home page"><img class="logo-mark" src="assets/erol-logo.png" alt="" width="42" height="42">Thoibisana</a>
         <button class="menu-close" id="menu-close" aria-label="Close menu">
             <svg class="icon"><use href="#i-close"/></svg>
         </button>
@@ -2673,7 +2680,7 @@
                     <button type="button" data-mode="mni" aria-pressed="false">Meetei Mayek</button>
                 </div>
                 <div class="typing-target" id="typing-target" aria-hidden="true"></div>
-                <p class="typing-ref" id="typing-ref">Psalm 119:105</p>
+                <p class="typing-ref" id="typing-ref">John 3:16</p>
                 <label for="typing-input" class="visually-hidden">Type the text shown above</label>
                 <input class="field" id="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here…">
                 <div class="keypad" id="keypad" role="group" aria-label="Meetei Mayek letters" hidden></div>
@@ -2855,6 +2862,7 @@
     <div class="container">
         <span class="thanks-native" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span>
         <p class="thanks">Thank you for visiting</p>
+        <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
         <p class="visitors" id="visitors" hidden>
             <svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
             <span><strong id="visitor-count">0</strong> lovely visitors so far</span>
@@ -3151,8 +3159,8 @@
     // ---------- Typing challenge (English or Meetei Mayek) ----------
     const typingModes = {
         en: {
-            text: 'Your word is a lamp for my feet, a light on my path.',
-            reference: 'Psalm 119:105',
+            text: 'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.',
+            reference: 'John 3:16',
             title: 'Can you beat my 42 WPM?',
             desc: 'That is my certified speed, at 98% accuracy. Type the line below to try.',
             placeholder: 'Start typing here…'
