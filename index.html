@@ -87,6 +87,120 @@
             margin-top: 40px;
             font-size: 16px;
         }
+
+        footer a {
+            color: white;
+        }
+
+        /* Header links */
+        .header-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            font-size: 18px;
+            font-family: inherit;
+            color: white;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 2px solid white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            background-color: white;
+            color: black;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Contact */
+        .contact-intro {
+            margin-top: 0;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            font-size: 18px;
+            font-family: inherit;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid white;
+            outline-offset: 1px;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            justify-self: start;
+        }
+
+        .contact-form .btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .honeypot {
+            display: none;
+        }
+
+        .form-status {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            header h2 {
+                font-size: 22px;
+            }
+
+            section {
+                margin: 20px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -106,6 +220,21 @@
     <h1>Laishram Thoibisana</h1>
     <h1>ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</h1>
     <h2>Native Manipuri Language Expert | Translator & Transcriber</h2>
+
+    <div class="header-links">
+        <a class="btn" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+        </a>
+        <a class="btn" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+            Google Scholar
+        </a>
+        <a class="btn" href="#contact">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+            Contact Me
+        </a>
+    </div>
 </header>
 
 <!-- About -->
@@ -136,27 +265,69 @@
     <h3>Projects & Experience</h3>
     <ul class="content">
         <li>
-            <strong>Manipuri Language Expert</strong> – Karya (Freelance)<br>
-            <em>Jan 2026 – Present | India (Remote)</em>
+            <strong>Manipuri Language Expert</strong> – KGEN (Freelance)<br>
+            <em>Oct 2026 – Present | India (Remote)</em><br>
+            Contributing to KGEN language-data projects through high-quality Manipuri speech recording
+            and linguistic data collection. Responsible for following project guidelines, maintaining
+            recording accuracy and clarity, and completing required project activation and subscription
+            processes to support AI and language technology development.
         </li>
 
         <li>
-            <strong>Manipuri Translator</strong> – COIL-D, Indian Institute of Technology Guwahati (Freelance)<br>
-            <em>Jan 2025 – Present | Remote</em>
+            <strong>Manipuri Language Expert</strong> – Karya (Freelance)<br>
+            <em>Oct 2025 – Present | India (Remote)</em><br>
+            Contributing to language-data projects through audio voice recording, audio validation,
+            audio proofreading, and audio transcription. Ensuring accurate, clear, and guideline-compliant
+            linguistic data to support AI, speech technology, and multilingual language-resource development.
+        </li>
+
+        <li>
+            <strong>Manipuri Translator, Center of India Language Data (COIL-D)</strong> – Indian Institute of Technology Guwahati (Freelance)<br>
+            <em>Jan 2025 – Present | Remote</em><br>
+            Working on language-data and NLP projects involving Hindi-to-English translation, POS tagging
+            and analysis, NER annotation and translation, and linguistic dataset preparation. Ensuring
+            accurate and consistent linguistic data for NLP and AI applications.
+        </li>
+
+        <li>
+            <strong>Video Subtitle Translation</strong> – YouTube (Freelance)<br>
+            <em>Jul 2025 – Jun 2026 | India (Remote)</em><br>
+            Collaborated with Magnon Sancus and YouTube on Manipuri video subtitle translation, ensuring
+            accurate, natural, and context-preserving translations while maintaining the original meaning and tone.
         </li>
 
         <li>
             <strong>Manipuri Language Expert</strong> – Lingual Consultancy Services (Freelance)<br>
             <em>Jan 2025 – Dec 2025 | India (Remote)</em><br>
-            Translation and transcription in Manipuri, English, and Hindi with strict quality standards.
+            Provided professional Manipuri translation and transcription services while ensuring linguistic
+            accuracy, consistency, and quality. Worked with client-specific requirements, maintained
+            confidentiality, met project deadlines, and delivered high-quality linguistic data.
         </li>
 
         <li>
             <strong>Linguistic Translator & Transcriber</strong> – Shaip (Freelance)<br>
             <em>Jan 2023 – Dec 2024 | Remote</em><br>
-            Translated Manipuri ↔ English documents and provided professional audio transcription services.
+            Provided Manipuri–English translation and transcription services for language-data projects.
+            Translated documents accurately, transcribed audio content, and ensured linguistic quality and
+            consistency according to project requirements.
         </li>
     </ul>
+</section>
+
+<!-- Publications -->
+<section>
+    <h3>Publications</h3>
+    <ul class="content">
+        <li>
+            <strong>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</strong><br>
+            Laishram Thoibisana Devi, Grace Lee (University of Houston)<br>
+            <em>Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</em>
+        </li>
+    </ul>
+    <p class="content">
+        See all my publications on
+        <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color: white;">Google Scholar</a>.
+    </p>
 </section>
 
 <!-- Education -->
@@ -214,10 +385,86 @@
     </ul>
 </section>
 
+<!-- Contact -->
+<section id="contact">
+    <h3>Contact Me</h3>
+    <p class="content contact-intro">
+        Need Manipuri translation, transcription, or language data work? Send me a message
+        and I'll get back to you by email. You can also reach me on LinkedIn.
+    </p>
+
+    <div class="header-links" style="justify-content: flex-start;">
+        <a class="btn" href="mailto:YOUR_EMAIL@example.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+            Email Me
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+        </a>
+    </div>
+
+    <!-- Messages are delivered to the email below by FormSubmit (https://formsubmit.co) -->
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from your website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+        <div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+</section>
+
 <!-- Footer -->
 <footer>
-    © 2026 Laishram Thoibisana. All rights reserved.
+    © 2026 Laishram Thoibisana. All rights reserved.<br>
+    <a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
 </footer>
+
+<script>
+    // Send the form in the background so the visitor stays on the page
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const button = form.querySelector('button');
+        button.disabled = true;
+        statusEl.textContent = 'Sending...';
+
+        try {
+            const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            });
+            if (!response.ok) throw new Error();
+            form.reset();
+            statusEl.textContent = 'Thank you! Your message has been sent.';
+        } catch (error) {
+            statusEl.textContent = 'Sorry, the message could not be sent. Please use the Email Me button instead.';
+        } finally {
+            button.disabled = false;
+        }
+    });
+</script>
 
 </body>
 </html>
