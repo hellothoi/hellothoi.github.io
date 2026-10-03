@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://hellothoi.github.io/">
     <meta property="og:title" content="Thoibisana Laishram · Manipuri Language Expert">
     <meta property="og:description" content="Translation, transcription and language data in Manipuri, English, Hindi and Korean.">
-    <meta property="og:image" content="https://hellothoi.github.io/assets/erol-logo.png">
+    <meta property="og:image" content="https://hellothoi.github.io/assets/erol.png">
     <link rel="icon" type="image/png" href="assets/erol-logo.png">
     <link rel="apple-touch-icon" href="assets/erol-logo.png">
 
@@ -902,13 +902,13 @@
         /* ---------- Services ---------- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .service {
             position: relative;
-            padding: 34px 32px 36px;
+            padding: 32px 26px 34px;
             transition: transform 0.45s var(--ease), box-shadow 0.45s, border-color 0.45s;
         }
 
@@ -954,7 +954,7 @@
 
         .service h3 {
             margin-bottom: 10px;
-            font-size: 30px;
+            font-size: 26px;
         }
 
         .service p {
@@ -1113,6 +1113,48 @@
 
         .research-card .eyebrow {
             color: var(--rose-soft);
+        }
+
+        .research-top {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 56px;
+            align-items: center;
+        }
+
+        /* EROL image, styled like a taped-on sticker */
+        .erol-photo {
+            position: relative;
+            margin: 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.6);
+            transform: rotate(3deg);
+            transition: transform 0.5s var(--ease);
+        }
+
+        .erol-photo:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .erol-photo::before {
+            content: "";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            width: 100px;
+            height: 28px;
+            background-color: rgba(247, 179, 202, 0.85);
+            border-radius: 3px;
+            transform: translateX(-50%) rotate(-4deg);
+        }
+
+        .erol-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
         }
 
         .research-card h2 {
@@ -1577,6 +1619,10 @@
             color: var(--berry);
         }
 
+        .nowrap {
+            white-space: nowrap;
+        }
+
         /* Pushed to the bottom so the dashed lines line up across cards */
         .edu-card p {
             margin: auto 0 0;
@@ -2033,6 +2079,12 @@
             }
         }
 
+        @media (max-width: 1100px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 980px) {
             .hero .container,
             .about-grid,
@@ -2051,12 +2103,18 @@
                 justify-self: start;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
             .exp-intro {
                 position: static;
+            }
+
+            .research-top {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+
+            .erol-photo {
+                justify-self: center;
+                width: min(280px, 100%);
             }
 
             .research-card,
@@ -2520,16 +2578,23 @@
 <section class="section" id="research">
     <div class="container">
         <div class="research-card reveal">
-            <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
-            <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
-            <div class="pub-meta">
-                <span class="pill">Publication</span>
+            <div class="research-top">
+                <div>
+                    <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Research</span>
+                    <h2>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h2>
+                    <div class="pub-meta">
+                        <span class="pill">Publication</span>
+                    </div>
+                    <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (Nalanda University)</p>
+                    <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
+                    <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                        View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
+                    </a>
+                </div>
+                <figure class="erol-photo">
+                    <img src="assets/erol.png" alt="A vintage typewriter typing the word EROL" width="560" height="558" loading="lazy">
+                </figure>
             </div>
-            <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong> and Grace Lee (University of Houston)</p>
-            <p class="pub-venue">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
-            <a class="btn btn-glass" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-                View on Google Scholar <svg class="icon"><use href="#i-arrow"/></svg>
-            </a>
 
             <div class="project">
                 <span class="project-icon"><svg class="icon"><use href="#i-globe"/></svg></span>
@@ -2624,7 +2689,7 @@
                 <span class="edu-type">Certificate</span>
                 <h4>Proficiency in Korean</h4>
                 <span class="entry-org">Nalanda University</span>
-                <p>Credential ID: CLK/25-S/KOR24</p>
+                <p>Credential ID: <span class="nowrap">CLK/25-S/KOR24</span></p>
             </article>
             <article class="card edu-card reveal d2">
                 <div class="edu-top">
