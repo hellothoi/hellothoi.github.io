@@ -279,11 +279,6 @@
             border-color: var(--rose-soft);
         }
 
-        .btn-round {
-            width: 52px;
-            padding: 0;
-        }
-
         .btn-sm {
             min-height: 42px;
             padding: 0 18px;
@@ -811,14 +806,6 @@
             font-size: 18.5px;
         }
 
-        .about-text .signature {
-            margin: 26px 0 0;
-            font-family: var(--script);
-            font-size: 64px;
-            line-height: 1;
-            color: var(--berry);
-        }
-
         .loves {
             display: flex;
             flex-wrap: wrap;
@@ -910,58 +897,6 @@
 
         .rating .on {
             color: var(--rose);
-        }
-
-        /* ---------- Marquee ---------- */
-        .marquee {
-            position: relative;
-            margin-top: 120px;
-            padding: 30px 0;
-            overflow: hidden;
-            background-color: var(--bg-pink);
-            border-block: 1px solid var(--line);
-        }
-
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: scroll-x 40s linear infinite;
-        }
-
-        .marquee:hover .marquee-track {
-            animation-play-state: paused;
-        }
-
-        .marquee-group {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            padding-right: 36px;
-        }
-
-        .marquee-word {
-            font-family: var(--display);
-            font-size: clamp(30px, 4vw, 46px);
-            font-style: italic;
-            font-weight: 600;
-            line-height: 1.3;
-            color: var(--plum);
-            white-space: nowrap;
-        }
-
-        .marquee-word[lang] {
-            font-style: normal;
-            font-size: clamp(26px, 3.4vw, 38px);
-        }
-
-        .marquee .icon {
-            width: 20px;
-            height: 20px;
-            color: var(--rose);
-        }
-
-        @keyframes scroll-x {
-            to { transform: translateX(-50%); }
         }
 
         /* ---------- Services ---------- */
@@ -1571,91 +1506,84 @@
         }
 
         /* ---------- Education ---------- */
-        .edu-grid {
+        .edu-cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .col-title {
+        .edu-card {
+            display: flex;
+            flex-direction: column;
+            padding: 28px 26px 30px;
+            transition: transform 0.45s var(--ease), box-shadow 0.45s, border-color 0.45s;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--rose-soft);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .edu-top {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 12px;
-            margin-bottom: 20px;
-            font-size: 30px;
+            margin-bottom: 22px;
         }
 
-        .col-title .service-icon {
-            width: 46px;
-            height: 46px;
+        .edu-top .service-icon {
+            width: 48px;
+            height: 48px;
             margin: 0;
         }
 
-        .col-title .icon {
-            width: 20px;
-            height: 20px;
+        .edu-top .service-icon .icon {
+            width: 22px;
+            height: 22px;
         }
 
-        .entries {
-            display: grid;
-            gap: 14px;
-        }
-
-        .entry {
-            display: grid;
-            grid-template-columns: 112px 1fr;
-            gap: 18px;
-            padding: 22px 24px;
-        }
-
-        .entry-date {
-            padding-top: 3px;
-            font-size: 13px;
+        .date-pill {
+            padding: 5px 12px;
+            font-size: 12.5px;
             font-weight: 700;
+            color: var(--berry);
+            white-space: nowrap;
+            background-color: var(--bg-soft);
+            border-radius: 999px;
+        }
+
+        .edu-type {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
             color: var(--muted);
         }
 
-        .entry h4 {
-            font-size: 22px;
+        .edu-card h4 {
+            font-size: 25px;
+            line-height: 1.15;
         }
 
         .entry-org {
             display: block;
-            margin: 4px 0 2px;
+            margin: 8px 0 18px;
             font-size: 15px;
             font-weight: 700;
             color: var(--berry);
         }
 
-        .entry p {
-            margin: 0;
+        /* Pushed to the bottom so the dashed lines line up across cards */
+        .edu-card p {
+            margin: auto 0 0;
+            padding-top: 14px;
             font-size: 14.5px;
             color: var(--muted);
-        }
-
-        .cv-card {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 40px;
-            padding: 28px 32px;
-            background:
-                radial-gradient(circle at 0% 50%, rgba(247, 179, 202, 0.6), transparent 55%),
-                var(--bg-soft);
-            border: 1px dashed var(--rose-soft);
-            border-radius: var(--radius-lg);
-        }
-
-        .cv-card h3 {
-            font-size: 28px;
-        }
-
-        .cv-card p {
-            margin: 4px 0 0;
-            font-size: 15.5px;
-            color: var(--muted);
+            border-top: 1px dashed var(--line);
         }
 
         /* ---------- LinkedIn ---------- */
@@ -1770,36 +1698,22 @@
             border-color: #bfe6cf;
         }
 
-        .contact-list {
-            display: grid;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .contact-list a,
-        .contact-list span {
-            display: inline-flex;
+        .location {
+            display: flex;
             align-items: center;
             gap: 12px;
+            margin: 0;
             font-weight: 600;
             color: var(--plum);
-            text-decoration: none;
         }
 
-        .contact-list a:hover {
-            color: var(--berry);
-        }
-
-        .contact-list .service-icon {
-            display: grid;
+        .location .service-icon {
             width: 42px;
             height: 42px;
             margin: 0;
         }
 
-        .contact-list .service-icon .icon {
+        .location .service-icon .icon {
             width: 18px;
             height: 18px;
         }
@@ -1967,41 +1881,6 @@
             color: var(--rose-soft);
         }
 
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 0 40px;
-            padding: 0;
-            list-style: none;
-        }
-
-        .footer-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 999px;
-            transition: background-color 0.25s, border-color 0.25s;
-        }
-
-        .footer-links a:hover {
-            background-color: rgba(255, 255, 255, 0.08);
-            border-color: var(--rose-soft);
-        }
-
-        .footer-links .icon {
-            width: 16px;
-            height: 16px;
-            color: var(--rose-soft);
-        }
-
         .visitors {
             display: flex;
             align-items: center;
@@ -2148,6 +2027,10 @@
             .nav {
                 padding: 6px 6px 6px 8px;
             }
+
+            .edu-cards {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 980px) {
@@ -2155,7 +2038,6 @@
             .about-grid,
             .exp-grid,
             .play-grid,
-            .edu-grid,
             .contact-grid,
             .connect {
                 grid-template-columns: 1fr;
@@ -2196,10 +2078,6 @@
                 padding-top: 88px;
             }
 
-            .marquee {
-                margin-top: 88px;
-            }
-
             .paper-top {
                 padding-bottom: 88px;
             }
@@ -2219,11 +2097,6 @@
             .services-grid,
             .form-row {
                 grid-template-columns: 1fr;
-            }
-
-            .hero-actions .btn:not(.btn-round) {
-                flex: 1 1 calc(50% - 6px);
-                padding: 0 16px;
             }
 
             .glance,
@@ -2250,9 +2123,8 @@
                 padding: 0 20px 22px;
             }
 
-            .entry {
+            .edu-cards {
                 grid-template-columns: 1fr;
-                gap: 4px;
             }
 
             .scroll-cue span {
@@ -2292,19 +2164,6 @@
                 opacity: 1;
                 transform: none;
             }
-
-            .marquee-track {
-                width: auto;
-            }
-
-            .marquee-group[aria-hidden="true"] {
-                display: none;
-            }
-
-            .marquee-group {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -2317,10 +2176,11 @@
 <svg width="0" height="0" style="position: absolute" aria-hidden="true">
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21.2s-7.6-4.6-9.8-9.4C.7 8.4 2.8 4.4 6.6 4c2.2-.2 3.9.9 5.4 2.9 1.5-2 3.2-3.1 5.4-2.9 3.8.4 5.9 4.4 4.4 7.8-2.2 4.8-9.8 9.4-9.8 9.4z"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
-    <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
@@ -2337,7 +2197,6 @@
     <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
     <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
     <symbol id="i-captions" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 15h4"/><path d="M15 15h2"/><path d="M7 11h2"/><path d="M13 11h4"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
     <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4"/><path d="m15.4 6.5-6.8 4"/></symbol>
@@ -2451,8 +2310,8 @@
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>About me</span>
             <h2>Hello, I'm <em>Thoibisana</em></h2>
             <p>
-                I am a professional Manipuri linguist based in Imphal. Accuracy, cultural nuance and
-                respect for the Meetei Mayek script are at the heart of everything I deliver, whether
+                I am a professional Manipuri linguist. Accuracy and cultural nuance
+                are at the heart of everything I deliver, whether
                 it is a document, a voice recording or a research dataset.
             </p>
             <ul class="loves">
@@ -2466,7 +2325,7 @@
         <aside class="glance reveal d2" aria-label="At a glance">
             <h3>At a glance</h3>
             <div class="stats">
-                <div class="stat"><span class="stat-value" data-count="4">4</span><span class="stat-label">Working languages</span></div>
+                <div class="stat"><span class="stat-value" data-count="4">4</span><span class="stat-label">Scripts I write</span></div>
                 <div class="stat"><span class="stat-value" data-count="3" data-suffix="+">3+</span><span class="stat-label">Years of experience</span></div>
                 <div class="stat"><span class="stat-value" data-count="6">6</span><span class="stat-label">Organisations</span></div>
                 <div class="stat"><span class="stat-value" data-count="3">3</span><span class="stat-label">Current projects</span></div>
@@ -2491,32 +2350,6 @@
             </ul>
         </aside>
     </div>
-
-    <!-- Greetings ribbon -->
-    <div class="marquee" aria-label="Hello and thank you in Manipuri, Hindi, Korean and English">
-        <div class="marquee-track">
-            <div class="marquee-group">
-                <span class="marquee-word" lang="mni">ꯈꯨꯔꯨꯝꯖꯔꯤ</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="hi">नमस्ते</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="ko">안녕하세요</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word">Hello</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="hi">धन्यवाद</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="ko">감사합니다</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-                <span class="marquee-word">Thank you</span><svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
-            </div>
-            <div class="marquee-group" aria-hidden="true">
-                <span class="marquee-word" lang="mni">ꯈꯨꯔꯨꯝꯖꯔꯤ</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="hi">नमस्ते</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="ko">안녕하세요</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word">Hello</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="hi">धन्यवाद</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word" lang="ko">감사합니다</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-                <span class="marquee-word">Thank you</span><svg class="icon icon-fill"><use href="#i-heart"/></svg>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- Services -->
@@ -2525,44 +2358,56 @@
         <div class="section-head reveal">
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Services</span>
             <h2>How I can <em>help</em></h2>
-            <p>Careful, guideline-compliant language work for research teams and AI data projects.</p>
+            <p>Eight ways I can support your language project.</p>
         </div>
         <div class="services-grid">
             <article class="card service reveal">
                 <span class="service-num" aria-hidden="true">01</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-languages"/></svg></div>
                 <h3>Translation</h3>
-                <p>Manipuri, English and Hindi translation, including the Meetei Mayek script, keeping meaning and tone intact.</p>
+                <p>Manipuri, English and Hindi translation of documents and data, keeping meaning and tone intact.</p>
             </article>
             <article class="card service reveal d1">
                 <span class="service-num" aria-hidden="true">02</span>
-                <div class="service-icon"><svg class="icon"><use href="#i-file"/></svg></div>
-                <h3>Transcription</h3>
-                <p>Accurate Manipuri audio transcription and proofreading to strict quality standards.</p>
+                <div class="service-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+                <h3>Book Translation</h3>
+                <p>Careful translation of books and long-form writing into and out of Manipuri, preserving the author's voice.</p>
             </article>
             <article class="card service reveal d2">
                 <span class="service-num" aria-hidden="true">03</span>
-                <div class="service-icon"><svg class="icon"><use href="#i-mic"/></svg></div>
-                <h3>Speech Data</h3>
-                <p>Voice recording, audio validation and linguistic data collection for speech technology.</p>
+                <div class="service-icon"><svg class="icon"><use href="#i-swap"/></svg></div>
+                <h3>Transliteration</h3>
+                <p>Accurate transliteration of Manipuri text between Meetei Mayek and other scripts, including romanization.</p>
+            </article>
+            <article class="card service reveal d3">
+                <span class="service-num" aria-hidden="true">04</span>
+                <div class="service-icon"><svg class="icon"><use href="#i-file"/></svg></div>
+                <h3>Transcription</h3>
+                <p>Accurate Manipuri audio transcription to strict quality standards.</p>
             </article>
             <article class="card service reveal">
-                <span class="service-num" aria-hidden="true">04</span>
+                <span class="service-num" aria-hidden="true">05</span>
+                <div class="service-icon"><svg class="icon"><use href="#i-mic"/></svg></div>
+                <h3>Speech Data</h3>
+                <p>Clear voice recordings and linguistic data collection for speech technology.</p>
+            </article>
+            <article class="card service reveal d1">
+                <span class="service-num" aria-hidden="true">06</span>
+                <div class="service-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+                <h3>Quality Review</h3>
+                <p>Audio validation and proofreading, so every file meets the project guidelines.</p>
+            </article>
+            <article class="card service reveal d2">
+                <span class="service-num" aria-hidden="true">07</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-tag"/></svg></div>
                 <h3>NLP Annotation</h3>
                 <p>POS tagging, NER annotation and dataset preparation for NLP and AI applications.</p>
             </article>
-            <article class="card service reveal d1">
-                <span class="service-num" aria-hidden="true">05</span>
+            <article class="card service reveal d3">
+                <span class="service-num" aria-hidden="true">08</span>
                 <div class="service-icon"><svg class="icon"><use href="#i-captions"/></svg></div>
                 <h3>Subtitles</h3>
                 <p>Natural, context-preserving Manipuri subtitles for video content.</p>
-            </article>
-            <article class="card service reveal d2">
-                <span class="service-num" aria-hidden="true">06</span>
-                <div class="service-icon"><svg class="icon"><use href="#i-book"/></svg></div>
-                <h3>MT Research Data</h3>
-                <p>Preparing and validating Manipuri data in Meetei Mayek for machine translation research.</p>
             </article>
         </div>
     </div>
@@ -2574,7 +2419,7 @@
         <div class="exp-intro reveal">
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Experience</span>
             <h2>Where I've <em>worked</em></h2>
-            <p>All freelance and remote from Imphal. Tap a role to read more.</p>
+            <p>All freelance and remote. Tap a role to read more.</p>
         </div>
 
         <div class="jobs">
@@ -2589,7 +2434,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Contributing to KGEN language-data projects through high-quality Manipuri speech recording and linguistic data collection. Responsible for following project guidelines, maintaining recording accuracy and clarity, and completing required project activation and subscription processes to support AI and language technology development.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">India · Remote</span><span class="tag">Speech data</span></div>
+                    <div class="tags"><span class="tag">Speech data</span></div>
                 </div>
             </details>
 
@@ -2604,7 +2449,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Contributing to language-data projects through audio voice recording, audio validation, audio proofreading, and audio transcription. Ensuring accurate, clear, and guideline-compliant linguistic data to support AI, speech technology, and multilingual language-resource development.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">India · Remote</span><span class="tag">Audio &amp; transcription</span></div>
+                    <div class="tags"><span class="tag">Audio &amp; transcription</span></div>
                 </div>
             </details>
 
@@ -2619,7 +2464,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Working on language-data and NLP projects at the Center of India Language Data, involving Hindi-to-English translation, POS tagging and analysis, NER annotation and translation, and linguistic dataset preparation. Ensuring accurate and consistent linguistic data for NLP and AI applications.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">Remote</span><span class="tag">NLP annotation</span></div>
+                    <div class="tags"><span class="tag">NLP annotation</span></div>
                 </div>
             </details>
 
@@ -2634,7 +2479,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Collaborated with Magnon Sancus and YouTube on Manipuri video subtitle translation, ensuring accurate, natural, and context-preserving translations while maintaining the original meaning and tone.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">India · Remote</span><span class="tag">Subtitles</span></div>
+                    <div class="tags"><span class="tag">Subtitles</span></div>
                 </div>
             </details>
 
@@ -2649,7 +2494,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Provided professional Manipuri translation and transcription services while ensuring linguistic accuracy, consistency, and quality. Worked with client-specific requirements in XTM, maintained confidentiality, met project deadlines, and delivered high-quality linguistic data.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">India · Remote</span><span class="tag">Translation agency</span></div>
+                    <div class="tags"><span class="tag">Translation agency</span></div>
                 </div>
             </details>
 
@@ -2664,7 +2509,7 @@
                 </summary>
                 <div class="job-body">
                     <p>Provided Manipuri–English translation and transcription services for language-data projects. Translated documents and audio and video content accurately, and ensured linguistic quality and consistency according to project requirements.</p>
-                    <div class="tags"><span class="tag">Freelance</span><span class="tag">Remote</span><span class="tag">Translation &amp; transcription</span></div>
+                    <div class="tags"><span class="tag">Translation &amp; transcription</span></div>
                 </div>
             </details>
         </div>
@@ -2718,7 +2563,7 @@
 
             <div class="card play-card reveal d2">
                 <h3 id="typing-title">Can you beat my 42 WPM?</h3>
-                <p id="typing-desc">My certified typing speed is 42 words per minute at 98% accuracy. Type the sentence below.</p>
+                <p id="typing-desc">That is my certified speed, at 98% accuracy. Type the sentence below to try.</p>
                 <div class="seg" role="group" aria-label="Typing language">
                     <button type="button" data-mode="en" aria-pressed="true">English</button>
                     <button type="button" data-mode="mni" aria-pressed="false">Meetei Mayek</button>
@@ -2760,45 +2605,47 @@
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Background</span>
             <h2>Education &amp; <em>certificates</em></h2>
         </div>
-        <div class="edu-block reveal">
-            <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>Education</h3>
-            <div class="edu-cards edu-cards-3">
-                <article class="card edu-card">
+        <div class="edu-cards">
+            <article class="card edu-card reveal">
+                <div class="edu-top">
+                    <span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
                     <span class="date-pill">2025 – 2026</span>
-                    <h4>Higher National Diploma, Korean Language &amp; Literature</h4>
-                    <span class="entry-org">Nalanda University</span>
-                </article>
-                <article class="card edu-card">
-                    <span class="date-pill">2019 – 2022</span>
-                    <h4>Bachelor of Arts in Education</h4>
-                    <span class="entry-org">Manipur University</span>
-                    <p>First Class Honors</p>
-                </article>
-                <article class="card edu-card">
-                    <span class="date-pill">2017 – 2019</span>
-                    <h4>Intermediate, Science</h4>
-                    <span class="entry-org">Waikhom Mani Girls' College</span>
-                    <p>Physics, Chemistry, Biology and Mathematics</p>
-                </article>
-            </div>
-        </div>
-
-        <div class="edu-block reveal">
-            <h3 class="col-title"><span class="service-icon"><svg class="icon"><use href="#i-award"/></svg></span>Certificates</h3>
-            <div class="edu-cards edu-cards-2">
-                <article class="card edu-card">
+                </div>
+                <span class="edu-type">Diploma</span>
+                <h4>Korean Language &amp; Literature</h4>
+                <span class="entry-org">Nalanda University</span>
+                <p>Higher National Diploma</p>
+            </article>
+            <article class="card edu-card reveal d1">
+                <div class="edu-top">
+                    <span class="service-icon"><svg class="icon"><use href="#i-award"/></svg></span>
                     <span class="date-pill">Jun 2025</span>
-                    <h4>Certificate of Proficiency in Korean</h4>
-                    <span class="entry-org">Nalanda University</span>
-                    <p>Credential ID: CLK/25-S/KOR24</p>
-                </article>
-                <article class="card edu-card">
-                    <span class="date-pill">Aug 2024</span>
-                    <h4>Typing Test Certification</h4>
-                    <span class="entry-org">Typing.com</span>
-                    <p>42 WPM at 98% accuracy · Credential ID: 305972911-158006147</p>
-                </article>
-            </div>
+                </div>
+                <span class="edu-type">Certificate</span>
+                <h4>Proficiency in Korean</h4>
+                <span class="entry-org">Nalanda University</span>
+                <p>Credential ID: CLK/25-S/KOR24</p>
+            </article>
+            <article class="card edu-card reveal d2">
+                <div class="edu-top">
+                    <span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+                    <span class="date-pill">2019 – 2022</span>
+                </div>
+                <span class="edu-type">Degree</span>
+                <h4>Bachelor of Arts in Education</h4>
+                <span class="entry-org">Manipur University</span>
+                <p>First Class Honors</p>
+            </article>
+            <article class="card edu-card reveal d3">
+                <div class="edu-top">
+                    <span class="service-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+                    <span class="date-pill">2017 – 2019</span>
+                </div>
+                <span class="edu-type">Higher secondary</span>
+                <h4>Intermediate, Science</h4>
+                <span class="entry-org">Waikhom Mani Girls' College</span>
+                <p>Physics, Chemistry, Biology and Mathematics</p>
+            </article>
         </div>
     </div>
 </section>
@@ -2830,7 +2677,7 @@
         <div class="reveal">
             <span class="eyebrow"><svg class="icon icon-fill"><use href="#i-heart"/></svg>Contact</span>
             <h2>Let's work <em>together</em></h2>
-            <p class="contact-lead">Need Manipuri translation, transcription or language data? Send me a message and I'll get back to you by email.</p>
+            <p class="contact-lead">Have a Manipuri language project in mind? I would love to hear about it.</p>
 
             <div class="email-row">
                 <a class="email-link" href="mailto:thoiclare@gmail.com">thoiclare@gmail.com</a>
@@ -2846,7 +2693,6 @@
 
         <div class="card form-card reveal d2">
             <h3>Send a message</h3>
-            <p>It goes straight to my inbox.</p>
 
             <!-- Messages are delivered to this email by FormSubmit (https://formsubmit.co) -->
             <form class="contact-form" id="contact-form" action="https://formsubmit.co/thoiclare@gmail.com" method="POST">
@@ -2859,6 +2705,8 @@
                     <legend>What do you need?</legend>
                     <div class="radio-chips">
                         <label><input type="radio" name="project_type" value="Translation" checked><span>Translation</span></label>
+                        <label><input type="radio" name="project_type" value="Book translation"><span>Book translation</span></label>
+                        <label><input type="radio" name="project_type" value="Transliteration"><span>Transliteration</span></label>
                         <label><input type="radio" name="project_type" value="Transcription"><span>Transcription</span></label>
                         <label><input type="radio" name="project_type" value="Speech data"><span>Speech data</span></label>
                         <label><input type="radio" name="project_type" value="Annotation"><span>Annotation</span></label>
@@ -2905,7 +2753,7 @@
             <svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
             <span><strong id="visitor-count">0</strong> lovely visitors so far</span>
         </p>
-        <p class="copyright">© 2026 Thoibisana Laishram · Made with <svg class="icon icon-fill" role="img" aria-label="love"><use href="#i-heart"/></svg> in Imphal</p>
+        <p class="copyright">© 2026 Thoibisana Laishram · Made with <svg class="icon icon-fill" role="img" aria-label="love"><use href="#i-heart"/></svg></p>
     </div>
 </footer>
 
@@ -3133,7 +2981,6 @@
 
     // ---------- Word explorer ----------
     const words = [
-        { en: 'Hello', mni: ['ꯈꯨꯔꯨꯝꯖꯔꯤ', 'Khurumjari'], hi: ['नमस्ते', 'Namaste'], ko: ['안녕하세요', 'Annyeonghaseyo'] },
         { en: 'Thank you', mni: ['ꯊꯥꯒꯠꯆꯔꯤ', 'Thagatchari'], hi: ['धन्यवाद', 'Dhanyavaad'], ko: ['감사합니다', 'Gamsahamnida'] },
         { en: 'Love', mni: ['ꯅꯨꯡꯁꯤ', 'Nungsi'], hi: ['प्यार', 'Pyaar'], ko: ['사랑', 'Sarang'] },
         { en: 'Mother', mni: ['ꯏꯃꯥ', 'Ima'], hi: ['माँ', 'Maa'], ko: ['어머니', 'Eomeoni'] },
@@ -3198,9 +3045,9 @@
     // ---------- Typing challenge (English or Meetei Mayek) ----------
     const typingModes = {
         en: {
-            text: 'My love is in the language, and every word carries a story.',
+            text: 'Every language carries a story worth telling well.',
             title: 'Can you beat my 42 WPM?',
-            desc: 'My certified typing speed is 42 words per minute at 98% accuracy. Type the sentence below.',
+            desc: 'That is my certified speed, at 98% accuracy. Type the sentence below to try.',
             placeholder: 'Start typing here…'
         },
         mni: {
@@ -3324,7 +3171,7 @@
             } else {
                 resultEl.textContent = wpm > 42
                     ? `Wow, ${wpm} WPM! You beat my 42 WPM.`
-                    : `${wpm} WPM. So close! My certified speed is 42 WPM at 98% accuracy.`;
+                    : `${wpm} WPM. So close, try again!`;
             }
         }
     });
