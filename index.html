@@ -631,11 +631,21 @@
             color: var(--rose-soft);
         }
 
+        /* Right-hand column of the hero: greeting card with a quote below */
+        .hero-side {
+            justify-self: center;
+            width: min(340px, 100%);
+        }
+
+        .hero-side .verse {
+            margin-top: 34px;
+            font-size: 18px;
+            text-align: center;
+        }
+
         /* Greeting card, styled like a taped note */
         .hello {
             position: relative;
-            justify-self: center;
-            width: min(340px, 100%);
             padding: 44px 30px 30px;
             text-align: center;
             color: var(--plum);
@@ -2138,8 +2148,12 @@
                 padding: 130px 0 120px;
             }
 
-            .hello {
+            .hero-side {
                 justify-self: start;
+            }
+
+            .hero-side .verse {
+                text-align: left;
             }
 
             .exp-intro {
@@ -2377,11 +2391,14 @@
             <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
         </div>
 
-        <div class="hello" id="hello" role="button" tabindex="0" aria-label="Say hello in my languages. Press to change language.">
-            <span class="hello-label">Say hello in my languages</span>
-            <span class="hello-word" id="hello-word" lang="mni">ꯈꯨꯔꯨꯝꯖꯔꯤ</span>
-            <span class="hello-roman" id="hello-roman">Khurumjari · Manipuri</span>
-            <div class="hello-dots" id="hello-dots" aria-hidden="true"></div>
+        <div class="hero-side">
+            <div class="hello" id="hello" role="button" tabindex="0" aria-label="Say hello in my languages. Press to change language.">
+                <span class="hello-label">Say hello in my languages</span>
+                <span class="hello-word" id="hello-word" lang="mni">ꯈꯨꯔꯨꯝꯖꯔꯤ</span>
+                <span class="hello-roman" id="hello-roman">Khurumjari · Manipuri</span>
+                <div class="hello-dots" id="hello-dots" aria-hidden="true"></div>
+            </div>
+            <p class="verse">“In the beginning was the Word, and the Word was with God, and the Word was God.”<span>John 1:1</span></p>
         </div>
     </div>
 
