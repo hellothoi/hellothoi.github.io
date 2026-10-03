@@ -3,166 +3,1407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laishram Thoibisana</title>
+    <title>Laishram Thoibisana | Manipuri Language Expert</title>
+    <meta name="description" content="Laishram Thoibisana – native Manipuri language expert, translator and transcriber working in Manipuri, English, Hindi and Korean for research and language-technology projects.">
+    <meta property="og:title" content="Laishram Thoibisana | Manipuri Language Expert">
+    <meta property="og:description" content="Manipuri translation, transcription and linguistic data for research and AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hellothoi.github.io/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313213a'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23d9b26a'%3ELT%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Sans+Meetei+Mayek:wght@500&family=Noto+Sans+Devanagari:wght@500&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+        // Apply the saved colour theme before the page paints
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+        } catch (e) {}
+        if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+    </script>
 
     <style>
+        :root {
+            --navy: #13213a;
+            --navy-2: #1d3152;
+            --heading: #13213a;
+            --text: #1f2633;
+            --muted: #5a6372;
+            --bg: #f6f5f1;
+            --surface: #ffffff;
+            --surface-2: #fbfaf8;
+            --line: #e3e0d8;
+            --gold: #d9b26a;
+            --gold-hover: #e6c587;
+            --accent: #8a5f1e;
+            --accent-soft: #f4ecdd;
+            --success: #1f7a4d;
+            --success-soft: #e8f5ee;
+            --error: #b3261e;
+            --btn-bg: #13213a;
+            --btn-fg: #ffffff;
+            --shadow: 0 1px 2px rgba(19, 33, 58, 0.06), 0 8px 24px rgba(19, 33, 58, 0.06);
+            --shadow-hover: 0 1px 2px rgba(19, 33, 58, 0.06), 0 16px 32px rgba(19, 33, 58, 0.12);
+            --radius: 14px;
+            --serif: "Source Serif 4", Georgia, serif;
+            --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            color-scheme: light;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --heading: #f1f2f4;
+                --text: #dfe3ea;
+                --muted: #a3acbb;
+                --bg: #0d1524;
+                --surface: #152038;
+                --surface-2: #101a2e;
+                --line: #26334d;
+                --accent: #e0bd7a;
+                --accent-soft: rgba(217, 178, 106, 0.14);
+                --success: #5fd09a;
+                --success-soft: rgba(95, 208, 154, 0.12);
+                --error: #ff8a80;
+                --btn-bg: #d9b26a;
+                --btn-fg: #13213a;
+                --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+                --shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.4);
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --heading: #f1f2f4;
+            --text: #dfe3ea;
+            --muted: #a3acbb;
+            --bg: #0d1524;
+            --surface: #152038;
+            --surface-2: #101a2e;
+            --line: #26334d;
+            --accent: #e0bd7a;
+            --accent-soft: rgba(217, 178, 106, 0.14);
+            --success: #5fd09a;
+            --success-soft: rgba(95, 208, 154, 0.12);
+            --error: #ff8a80;
+            --btn-bg: #d9b26a;
+            --btn-fg: #13213a;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+            --shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.4);
+            color-scheme: dark;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            color: white;
-            background-color: black;
-            overflow-x: hidden;
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Video Background */
-        .video-background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+        a {
+            color: var(--accent);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--heading);
+            margin: 0;
+        }
+
+        p {
+            margin: 0 0 1em;
+        }
+
+        [lang="mni"] {
+            font-family: "Noto Sans Meetei Mayek", var(--sans);
+        }
+
+        [lang="hi"] {
+            font-family: "Noto Sans Devanagari", var(--sans);
+        }
+
+        [lang="ko"] {
+            font-family: "Noto Sans KR", var(--sans);
+        }
+
+        .container {
             width: 100%;
-            height: 100%;
-            z-index: -1;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        .video-background {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
+        .icon-fill {
+            fill: currentColor;
+            stroke: none;
         }
 
-        header img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid white;
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
-        header h1 {
-            font-size: 48px;
-            margin: 20px 0 10px;
+        /* Scroll reveal (only when JavaScript is running) */
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        header h2 {
-            font-size: 28px;
-            font-weight: normal;
+        .js .reveal.in {
+            opacity: 1;
+            transform: none;
         }
 
-        section {
-            margin: 30px auto;
-            padding: 20px;
-            max-width: 1000px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-        }
-
-        h3 {
-            font-size: 32px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-        }
-
-        .content {
-            font-size: 20px;
-            line-height: 1.6;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 16px;
-        }
-
-        footer a {
-            color: white;
-        }
-
-        /* Header links */
-        .header-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
+        /* ---------- Buttons ---------- */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 22px;
-            font-size: 18px;
-            font-family: inherit;
-            color: white;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 22px;
+            font-family: var(--sans);
+            font-size: 15px;
+            font-weight: 600;
             text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.4);
-            border: 2px solid white;
-            border-radius: 30px;
+            border: 1.5px solid transparent;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.2s, color 0.2s;
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
         }
 
-        .btn:hover,
-        .btn:focus-visible {
-            background-color: white;
-            color: black;
+        .btn:hover {
+            transform: translateY(-1px);
         }
 
-        .btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .btn-gold {
+            color: var(--navy);
+            background-color: var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        .btn-ghost {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.35);
+            background: none;
+        }
+
+        .btn-ghost:hover {
+            border-color: #fff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-primary {
+            color: var(--btn-fg);
+            background-color: var(--btn-bg);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+        }
+
+        .btn-outline {
+            color: var(--heading);
+            background: none;
+            border-color: var(--line);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-sm {
+            padding: 9px 16px;
+            font-size: 14px;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: wait;
+            transform: none;
+        }
+
+        /* ---------- Navigation ---------- */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 50;
+            background-color: rgba(19, 33, 58, 0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav .container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 68px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: auto;
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 8px 12px;
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: color 0.2s, background-color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-links .nav-cta {
+            margin-left: 6px;
+            color: var(--navy);
+            background-color: var(--gold);
+        }
+
+        .nav-links .nav-cta:hover {
+            color: var(--navy);
+            background-color: var(--gold-hover);
+        }
+
+        .icon-btn {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            color: #fff;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .icon-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .theme-toggle .moon,
+        [data-theme="dark"] .theme-toggle .sun {
+            display: none;
+        }
+
+        [data-theme="dark"] .theme-toggle .moon {
+            display: block;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .theme-toggle .sun {
+                display: none;
+            }
+
+            :root:not([data-theme="light"]) .theme-toggle .moon {
+                display: block;
+            }
+        }
+
+        /* ---------- Hero ---------- */
+        /* Background video: fixed behind the page, visible through the hero and quote band */
+        .video-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .video-bg video.ready {
+            opacity: 1;
+        }
+
+        .hero {
+            position: relative;
+            padding: 150px 0 140px;
+            color: #fff;
+            background: linear-gradient(100deg, rgba(19, 33, 58, 0.88) 30%, rgba(19, 33, 58, 0.5) 100%);
+        }
+
+        .hero .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            align-items: center;
+            gap: 56px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(40px, 6vw, 64px);
+            letter-spacing: -0.5px;
+        }
+
+        .hero .native-name {
+            margin: 10px 0 22px;
+            font-size: clamp(20px, 2.6vw, 26px);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-lead {
+            max-width: 560px;
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        /* Greeting card */
+        .hello-card {
+            position: relative;
+            justify-self: center;
+            width: min(380px, 100%);
+            padding: 34px 32px 26px;
+            text-align: center;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+            cursor: pointer;
+            user-select: none;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .hello-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .hello-lang {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hello-word {
+            display: block;
+            min-height: 1.4em;
+            margin: 14px 0 4px;
+            font-size: clamp(40px, 5vw, 52px);
+            line-height: 1.3;
+            transition: opacity 0.35s, transform 0.35s;
+        }
+
+        .hello-roman {
+            display: block;
+            min-height: 1.6em;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: opacity 0.35s;
+        }
+
+        .hello-card.switching .hello-word {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        .hello-card.switching .hello-roman {
+            opacity: 0;
+        }
+
+        .hello-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 22px 0 14px;
+        }
+
+        .hello-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: background-color 0.3s, width 0.3s;
+        }
+
+        .hello-dots span.on {
+            width: 22px;
+            border-radius: 4px;
+            background-color: var(--gold);
+        }
+
+        .hello-hint {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            padding: 7px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            background-color: #fff;
+            border-radius: 999px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #22a06b;
+            box-shadow: 0 0 0 0 rgba(34, 160, 107, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            70% { box-shadow: 0 0 0 8px rgba(34, 160, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0); }
+        }
+
+        /* ---------- Stats ---------- */
+        .stats {
+            position: relative;
+            z-index: 2;
+            margin-top: -64px;
+            background: linear-gradient(transparent 64px, var(--bg) 64px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat {
+            padding: 26px 24px;
+            text-align: center;
+        }
+
+        .stat + .stat {
+            border-left: 1px solid var(--line);
+        }
+
+        .stat-value {
+            display: block;
+            font-family: var(--serif);
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--heading);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ---------- Sections ---------- */
+        .section {
+            padding: 96px 0 0;
+            background-color: var(--bg);
+            transition: background-color 0.3s;
+        }
+
+        .section.before-quote {
+            padding-bottom: 96px;
+        }
+
+        .section-head {
+            max-width: 680px;
+            margin-bottom: 44px;
+        }
+
+        .section-head .eyebrow {
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .section-head h2 {
+            font-size: clamp(30px, 4vw, 40px);
+        }
+
+        .section-head p {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 19px;
+        }
+
+        .drives {
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .drives li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--heading);
+        }
+
+        .drives .service-icon {
+            margin: 0;
+            width: 40px;
+            height: 40px;
+        }
+
+        .lang-card {
+            padding: 28px;
+        }
+
+        .lang-card h3 {
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .lang-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .lang-list li {
+            padding: 12px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .lang-list li:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            color: var(--heading);
+        }
+
+        .lang-note {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .meter {
+            height: 6px;
+            background-color: var(--accent-soft);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .meter span {
+            display: block;
+            height: 100%;
+            width: var(--level);
+            background-color: var(--accent);
+            border-radius: 3px;
+            transition: width 1.2s ease;
+        }
+
+        .js .lang-card:not(.in) .meter span {
+            width: 0;
+        }
+
+        /* Quote */
+        .quote {
+            padding: 96px 0;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(19, 33, 58, 0.62);
+        }
+
+        .quote blockquote {
+            margin: 0 auto;
+            max-width: 760px;
+            font-family: var(--serif);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.3;
+        }
+
+        .quote blockquote::before {
+            content: "“";
+            display: block;
+            height: 0.6em;
+            font-size: 2.2em;
+            line-height: 1;
+            color: var(--gold);
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 18px;
+            font-style: normal;
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            padding: 28px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            margin-bottom: 18px;
+            color: var(--accent);
+            background-color: var(--accent-soft);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .service-icon .icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .service h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .service p {
+            margin: 0;
+            font-size: 15.5px;
+            color: var(--muted);
+        }
+
+        /* Experience */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: -20px 0 32px;
+        }
+
+        .chip {
+            padding: 8px 16px;
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--muted);
+            background-color: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            cursor: pointer;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+        }
+
+        .chip:hover {
+            color: var(--heading);
+            border-color: var(--accent);
+        }
+
+        .chip[aria-pressed="true"] {
+            color: var(--btn-fg);
+            background-color: var(--btn-bg);
+            border-color: var(--btn-bg);
+        }
+
+        .timeline {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 36px;
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-item[hidden] {
+            display: none;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 207px;
+            top: 30px;
+            bottom: -2px;
+            width: 2px;
+            background-color: var(--line);
+        }
+
+        .timeline-item.last-visible::before {
+            display: none;
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 202px;
+            top: 26px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--bg);
+            border: 2px solid var(--accent);
+        }
+
+        .timeline-item[data-current]::after {
+            background-color: var(--accent);
+        }
+
+        .timeline-date {
+            padding-top: 20px;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .timeline-card {
+            margin-left: 14px;
+            padding: 22px 26px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-card h3 {
+            font-size: 20px;
+        }
+
+        .org {
+            margin: 4px 0 12px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--muted);
+            background-color: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+        }
+
+        .tag-current {
+            color: var(--success);
+            background-color: var(--success-soft);
+            border-color: transparent;
+        }
+
+        .timeline-card p {
+            margin: 0;
+            font-size: 15.5px;
+            color: var(--muted);
+        }
+
+        /* Research */
+        .stack {
+            display: grid;
+            gap: 16px;
+        }
+
+        .pub {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 24px;
+            padding: 30px;
+        }
+
+        .pub-venue {
+            display: grid;
+            place-items: center;
+            width: 92px;
+            height: 92px;
+            text-align: center;
+            font-family: var(--serif);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--gold);
+            background-color: var(--navy);
+            border: 1px solid rgba(217, 178, 106, 0.3);
+            border-radius: 12px;
+        }
+
+        .pub-venue.alt {
+            color: var(--accent);
+            background-color: var(--accent-soft);
+            border-color: transparent;
+        }
+
+        .pub-kind {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .pub h3 {
+            font-size: 22px;
+        }
+
+        .pub-authors {
+            margin: 10px 0 4px;
+        }
+
+        .pub-authors strong {
+            color: var(--heading);
+        }
+
+        .pub-where {
+            margin: 0 0 16px;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .pub p:last-child,
+        .pub ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+            color: var(--muted);
+            font-size: 15.5px;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .text-link .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Languages playground */
+        .play-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .play-card {
+            padding: 30px;
+        }
+
+        .play-card h3 {
+            margin-bottom: 6px;
+            font-size: 22px;
+        }
+
+        .play-card > p {
+            color: var(--muted);
+            font-size: 15.5px;
+        }
+
+        .word-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .translations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .translation {
+            position: relative;
+            padding: 16px 18px;
+            background-color: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            animation: pop 0.35s ease;
+        }
+
+        @keyframes pop {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .translation .t-lang {
+            display: block;
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .translation .t-word {
+            display: block;
+            margin-top: 4px;
+            font-size: 26px;
+            line-height: 1.35;
+            color: var(--heading);
+        }
+
+        .translation .t-roman {
+            display: block;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .speak {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            color: var(--accent);
+            background-color: var(--accent-soft);
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .speak .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .typing-target {
+            padding: 16px 18px;
+            margin-bottom: 14px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--muted);
+            background-color: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+        }
+
+        .typing-target .ok {
+            color: var(--success);
+        }
+
+        .typing-target .bad {
+            color: var(--error);
+            text-decoration: underline;
+        }
+
+        .typing-target .cursor {
+            border-left: 2px solid var(--accent);
+        }
+
+        .typing-input {
+            width: 100%;
+            padding: 12px 14px;
+            font-family: var(--sans);
+            font-size: 16px;
+            color: var(--text);
+            background-color: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .typing-stats {
+            display: flex;
+            gap: 24px;
+            margin: 16px 0 6px;
+        }
+
+        .typing-stats div {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .typing-stats strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 28px;
+            color: var(--heading);
+        }
+
+        .typing-result {
+            min-height: 1.6em;
+            margin: 6px 0 14px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* LinkedIn */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .post-frame {
+            width: 100%;
+            height: 560px;
+            border: 0;
+            border-radius: var(--radius);
+            background-color: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .follow-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 24px;
+            padding: 30px;
+        }
+
+        .follow-card .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0;
+            color: #fff;
+            background-color: #0a66c2;
+        }
+
+        .follow-card .service-icon .icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .follow-card h3 {
+            font-size: 22px;
+        }
+
+        .follow-card p {
+            margin: 6px 0 0;
+            color: var(--muted);
+        }
+
+        .follow-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-linkedin {
+            color: #fff;
+            background-color: #0a66c2;
+        }
+
+        .btn-linkedin:hover {
+            background-color: #004182;
+        }
+
+        /* Education & certifications */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .col-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .col-title .icon {
+            color: var(--accent);
+        }
+
+        .entry {
+            padding: 22px 24px;
+        }
+
+        .entry h4 {
+            font-family: var(--sans);
+            font-size: 17px;
+        }
+
+        .entry .org {
+            margin: 2px 0 8px;
+            font-size: 15.5px;
+        }
+
+        .entry p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .entry-date {
+            float: right;
+            margin-left: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
         }
 
         /* Contact */
-        .contact-intro {
-            margin-top: 0;
+        .contact {
+            padding-bottom: 96px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            color: var(--text);
+            text-decoration: none;
+            transition: border-color 0.2s, transform 0.2s, background-color 0.3s;
+        }
+
+        a.contact-item:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .contact-item .service-icon {
+            margin: 0;
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .contact-value {
+            font-weight: 600;
+            color: var(--heading);
+            overflow-wrap: anywhere;
+        }
+
+        .form-card {
+            padding: 32px;
+        }
+
+        .form-card h3 {
+            margin-bottom: 6px;
+            font-size: 22px;
+        }
+
+        .form-card > p {
+            color: var(--muted);
+            font-size: 15.5px;
         }
 
         .contact-form {
             display: grid;
-            gap: 15px;
+            gap: 16px;
             margin-top: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
         .contact-form label {
             display: block;
-            font-size: 18px;
             margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--heading);
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            box-sizing: border-box;
-            padding: 12px;
-            font-size: 18px;
-            font-family: inherit;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 8px;
+            padding: 12px 14px;
+            font-family: var(--sans);
+            font-size: 16px;
+            color: var(--text);
+            background-color: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            outline: 2px solid white;
-            outline-offset: 1px;
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
         }
 
         .contact-form textarea {
@@ -174,31 +1415,248 @@
             justify-self: start;
         }
 
-        .contact-form .btn:disabled {
-            opacity: 0.6;
-            cursor: wait;
-        }
-
         .honeypot {
             display: none;
         }
 
         .form-status {
-            font-size: 18px;
             margin: 0;
+            font-size: 15px;
+            font-weight: 500;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 34px;
+        .form-status.success {
+            color: var(--success);
+        }
+
+        .form-status.error {
+            color: var(--error);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.7);
+            background-color: var(--navy);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 14.5px;
+        }
+
+        footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        footer .brand {
+            margin-right: 0;
+            font-size: 17px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 40;
+            background-color: var(--navy);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.3s, transform 0.3s, background-color 0.2s;
+        }
+
+        .to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        .hello-card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1040px) {
+            .nav-toggle {
+                display: grid;
             }
 
-            header h2 {
-                font-size: 22px;
+            .nav-links {
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px 16px 20px;
+                background-color: var(--navy);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
 
-            section {
-                margin: 20px 16px;
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 14px;
+            }
+
+            .nav-links .nav-cta {
+                margin: 8px 0 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .hero .container,
+            .about-grid,
+            .two-col,
+            .contact-grid,
+            .play-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 120px 0 120px;
+                text-align: center;
+            }
+
+            .hero-lead {
+                margin: 0 auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(3) {
+                border-left: 0;
+            }
+
+            .stat:nth-child(n + 3) {
+                border-top: 1px solid var(--line);
+            }
+
+            .follow-card {
+                grid-template-columns: auto 1fr;
+            }
+
+            .follow-actions {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .brand-name {
+                display: none;
+            }
+
+            .section {
+                padding-top: 72px;
+            }
+
+            .section.before-quote {
+                padding-bottom: 72px;
+            }
+
+            .quote {
+                padding: 72px 0;
+            }
+
+            .services-grid,
+            .form-row,
+            .translations {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding-left: 28px;
+            }
+
+            .timeline-item::before {
+                left: 5px;
+                top: 8px;
+            }
+
+            .timeline-item::after {
+                left: 0;
+                top: 4px;
+            }
+
+            .timeline-date {
+                padding-top: 0;
+                text-align: left;
+            }
+
+            .timeline-card {
+                margin-left: 0;
+            }
+
+            .pub,
+            .follow-card {
+                grid-template-columns: 1fr;
+            }
+
+            .entry-date {
+                float: none;
+                display: block;
+                margin: 0 0 4px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+
+            .js .reveal {
+                opacity: 1;
+                transform: none;
             }
         }
     </style>
@@ -206,240 +1664,878 @@
 
 <body>
 
-<!-- Background Video -->
-<div class="video-background-container">
-    <video autoplay muted loop class="video-background">
-        <source src="background-picnic.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<!-- Icons -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+    <symbol id="i-captions" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4"/><path d="M15 15h2"/><path d="M7 11h2"/><path d="M13 11h4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98"/><path d="m15.41 6.51-6.82 3.98"/></symbol>
+</svg>
+
+<!-- Navigation -->
+<nav class="nav" aria-label="Main">
+    <div class="container">
+        <a class="brand" href="#top">
+            <span class="brand-mark">LT</span>
+            <span class="brand-name">Laishram Thoibisana</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#linkedin">LinkedIn</a></li>
+            <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
+        <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Switch light or dark theme">
+            <svg class="icon sun"><use href="#i-moon"/></svg>
+            <svg class="icon moon"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Background video -->
+<div class="video-bg" aria-hidden="true">
+    <video id="bg-video" muted loop playsinline preload="none"></video>
 </div>
 
-<!-- Header -->
-<header>
-    <img src="photo.jpg" alt="Laishram Thoibisana">
-    <h1>Laishram Thoibisana</h1>
-    <h1>ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</h1>
-    <h2>Native Manipuri Language Expert | Translator & Transcriber</h2>
+<!-- Hero -->
+<header class="hero" id="top">
+    <div class="container">
+        <div>
+            <span class="eyebrow">Native Manipuri Language Expert</span>
+            <h1>Laishram Thoibisana</h1>
+            <p class="native-name" lang="mni">ꯂꯥꯏꯁ꯭ꯔꯝ ꯊꯣꯏꯕꯤꯁꯥꯅꯥ</p>
+            <p class="hero-lead">
+                Translator and transcriber delivering accurate, high-quality linguistic data in
+                Manipuri, English, Hindi and Korean for academic institutions, language consultancies
+                and AI language-technology projects.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-gold" href="#contact">
+                    <svg class="icon"><use href="#i-mail"/></svg>
+                    Work with me
+                </a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
+                    <svg class="icon icon-fill"><use href="#i-linkedin"/></svg>
+                    LinkedIn
+                </a>
+                <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                    <svg class="icon icon-fill"><use href="#i-scholar"/></svg>
+                    Google Scholar
+                </a>
+            </div>
+        </div>
 
-    <div class="header-links">
-        <a class="btn" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            LinkedIn
-        </a>
-        <a class="btn" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-            Google Scholar
-        </a>
-        <a class="btn" href="#contact">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
-            Contact Me
-        </a>
+        <div style="text-align: center;">
+            <div class="hello-card" id="hello-card" role="button" tabindex="0" aria-label="Greeting in my languages. Press to switch language.">
+                <span class="hello-lang" id="hello-lang">Manipuri</span>
+                <span class="hello-word" id="hello-word" lang="mni">ꯈꯨꯔꯨꯝꯖꯔꯤ</span>
+                <span class="hello-roman" id="hello-roman">Khurumjari</span>
+                <div class="hello-dots" id="hello-dots" aria-hidden="true"></div>
+                <span class="hello-hint">Click to say hello in another language</span>
+            </div>
+            <span class="available"><span class="dot"></span> Available for new projects</span>
+        </div>
     </div>
 </header>
 
+<main>
+
+<!-- Stats -->
+<div class="stats">
+    <div class="container">
+        <div class="stats-grid card">
+            <div class="stat">
+                <span class="stat-value" data-count="4">4</span>
+                <span class="stat-label">Working languages</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" data-count="3" data-suffix="+">3+</span>
+                <span class="stat-label">Years of experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" data-count="6">6</span>
+                <span class="stat-label">Organisations served</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">WMT</span>
+                <span class="stat-label">2026 publication</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- About -->
-<section>
-    <h3>About Me</h3>
-    <p class="content">
-        I am a professional Manipuri linguist specializing in translation and transcription.
-        I work with academic institutions, language consultancies, and global platforms,
-        delivering accurate and high-quality linguistic data in Manipuri, English, Hindi, and Korean.
-    </p>
+<section class="section before-quote" id="about">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">About me</span>
+            <h2>Bringing Manipuri to research and language technology</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>
+                    I am a professional Manipuri linguist specializing in translation and transcription.
+                    I work with academic institutions, language consultancies, and global platforms,
+                    delivering accurate and high-quality linguistic data in Manipuri, English, Hindi, and Korean,
+                    including translation into the Meitei Mayek script.
+                </p>
+                <p>
+                    My recent work spans speech data recording and validation, NLP annotation for
+                    IIT Guwahati, and subtitle translation for YouTube. My research on multilingual
+                    machine translation for Northeastern Indian languages appears at WMT 2026.
+                </p>
+                <ul class="drives">
+                    <li><span class="service-icon"><svg class="icon"><use href="#i-heart"/></svg></span> Preserving the Manipuri language and Meitei Mayek script</li>
+                    <li><span class="service-icon"><svg class="icon"><use href="#i-globe"/></svg></span> Machine translation for low-resource languages</li>
+                    <li><span class="service-icon"><svg class="icon"><use href="#i-database"/></svg></span> Corpus development and linguistic data</li>
+                </ul>
+            </div>
+            <div class="card lang-card reveal">
+                <h3>Languages</h3>
+                <ul class="lang-list">
+                    <li>
+                        <div class="lang-row"><span class="lang-name">Manipuri (Meitei)</span><span class="lang-note">Native</span></div>
+                        <div class="meter"><span style="--level: 100%"></span></div>
+                    </li>
+                    <li>
+                        <div class="lang-row"><span class="lang-name">English</span><span class="lang-note">Fluent</span></div>
+                        <div class="meter"><span style="--level: 85%"></span></div>
+                    </li>
+                    <li>
+                        <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-note">Fluent</span></div>
+                        <div class="meter"><span style="--level: 85%"></span></div>
+                    </li>
+                    <li>
+                        <div class="lang-row"><span class="lang-name">Korean</span><span class="lang-note">Intermediate · Certified</span></div>
+                        <div class="meter"><span style="--level: 55%"></span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Skills -->
-<section>
-    <h3>Skills</h3>
-    <ul class="content">
-        <li>Manipuri Translation & Transcription</li>
-        <li>English & Hindi Translation</li>
-        <li>Korean Language Proficiency</li>
-        <li>Linguistic Data Annotation</li>
-        <li>Academic & Research Translation</li>
-        <li>Certified Typist</li>
-    </ul>
+<!-- Quote -->
+<div class="quote">
+    <div class="container reveal">
+        <blockquote>My love is in the language.</blockquote>
+        <cite>— Laishram Thoibisana</cite>
+    </div>
+</div>
+
+<!-- Services -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Services</span>
+            <h2>What I can do for you</h2>
+            <p>Reliable, guideline-compliant language work for research teams and AI data projects.</p>
+        </div>
+        <div class="services-grid">
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-languages"/></svg></div>
+                <h3>Translation</h3>
+                <p>Manipuri ↔ English and Hindi translation, including Meitei Mayek script, preserving meaning and tone.</p>
+            </article>
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-file"/></svg></div>
+                <h3>Transcription</h3>
+                <p>Accurate Manipuri audio transcription and proofreading to strict quality standards.</p>
+            </article>
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-mic"/></svg></div>
+                <h3>Speech Data</h3>
+                <p>Voice recording, audio validation and linguistic data collection for speech technology.</p>
+            </article>
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-tag"/></svg></div>
+                <h3>NLP Annotation</h3>
+                <p>POS tagging, NER annotation and dataset preparation for NLP and AI applications.</p>
+            </article>
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-captions"/></svg></div>
+                <h3>Subtitle Translation</h3>
+                <p>Natural, context-preserving Manipuri subtitles for video content.</p>
+            </article>
+            <article class="card service reveal">
+                <div class="service-icon"><svg class="icon"><use href="#i-book"/></svg></div>
+                <h3>MT Research Data</h3>
+                <p>Preparing and validating Manipuri language data in Meitei Mayek for machine translation research.</p>
+            </article>
+        </div>
+    </div>
 </section>
 
 <!-- Experience -->
-<section>
-    <h3>Projects & Experience</h3>
-    <ul class="content">
-        <li>
-            <strong>Manipuri Language Expert</strong> – KGEN (Freelance)<br>
-            <em>Oct 2026 – Present | India (Remote)</em><br>
-            Contributing to KGEN language-data projects through high-quality Manipuri speech recording
-            and linguistic data collection. Responsible for following project guidelines, maintaining
-            recording accuracy and clarity, and completing required project activation and subscription
-            processes to support AI and language technology development.
-        </li>
+<section class="section" id="experience">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Experience</span>
+            <h2>Projects &amp; experience</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter experience">
+            <button class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" data-filter="current" aria-pressed="false">Current</button>
+            <button class="chip" data-filter="translation" aria-pressed="false">Translation</button>
+            <button class="chip" data-filter="speech" aria-pressed="false">Speech &amp; audio</button>
+            <button class="chip" data-filter="nlp" aria-pressed="false">NLP &amp; AI data</button>
+        </div>
+        <ol class="timeline" id="timeline">
+            <li class="timeline-item reveal" data-current data-tags="speech nlp">
+                <div class="timeline-date">Oct 2026 – Present</div>
+                <div class="card timeline-card">
+                    <h3>Manipuri Language Expert</h3>
+                    <div class="org">KGEN</div>
+                    <div class="meta"><span class="tag tag-current">Current</span><span class="tag">Freelance</span><span class="tag">India · Remote</span></div>
+                    <p>
+                        Contributing to KGEN language-data projects through high-quality Manipuri speech recording
+                        and linguistic data collection. Responsible for following project guidelines, maintaining
+                        recording accuracy and clarity, and completing required project activation and subscription
+                        processes to support AI and language technology development.
+                    </p>
+                </div>
+            </li>
 
-        <li>
-            <strong>Manipuri Language Expert</strong> – Karya (Freelance)<br>
-            <em>Oct 2025 – Present | India (Remote)</em><br>
-            Contributing to language-data projects through audio voice recording, audio validation,
-            audio proofreading, and audio transcription. Ensuring accurate, clear, and guideline-compliant
-            linguistic data to support AI, speech technology, and multilingual language-resource development.
-        </li>
+            <li class="timeline-item reveal" data-current data-tags="speech nlp">
+                <div class="timeline-date">Oct 2025 – Present</div>
+                <div class="card timeline-card">
+                    <h3>Manipuri Language Expert</h3>
+                    <div class="org">Karya</div>
+                    <div class="meta"><span class="tag tag-current">Current</span><span class="tag">Freelance</span><span class="tag">India · Remote</span></div>
+                    <p>
+                        Contributing to language-data projects through audio voice recording, audio validation,
+                        audio proofreading, and audio transcription. Ensuring accurate, clear, and guideline-compliant
+                        linguistic data to support AI, speech technology, and multilingual language-resource development.
+                    </p>
+                </div>
+            </li>
 
-        <li>
-            <strong>Manipuri Translator, Center of India Language Data (COIL-D)</strong> – Indian Institute of Technology Guwahati (Freelance)<br>
-            <em>Jan 2025 – Present | Remote</em><br>
-            Working on language-data and NLP projects involving Hindi-to-English translation, POS tagging
-            and analysis, NER annotation and translation, and linguistic dataset preparation. Ensuring
-            accurate and consistent linguistic data for NLP and AI applications.
-        </li>
+            <li class="timeline-item reveal" data-current data-tags="translation nlp">
+                <div class="timeline-date">Jan 2025 – Present</div>
+                <div class="card timeline-card">
+                    <h3>Manipuri Translator, Center of India Language Data (COIL-D)</h3>
+                    <div class="org">Indian Institute of Technology Guwahati</div>
+                    <div class="meta"><span class="tag tag-current">Current</span><span class="tag">Freelance</span><span class="tag">Remote</span></div>
+                    <p>
+                        Working on language-data and NLP projects involving Hindi-to-English translation, POS tagging
+                        and analysis, NER annotation and translation, and linguistic dataset preparation. Ensuring
+                        accurate and consistent linguistic data for NLP and AI applications.
+                    </p>
+                </div>
+            </li>
 
-        <li>
-            <strong>Video Subtitle Translation</strong> – YouTube (Freelance)<br>
-            <em>Jul 2025 – Jun 2026 | India (Remote)</em><br>
-            Collaborated with Magnon Sancus and YouTube on Manipuri video subtitle translation, ensuring
-            accurate, natural, and context-preserving translations while maintaining the original meaning and tone.
-        </li>
+            <li class="timeline-item reveal" data-tags="translation">
+                <div class="timeline-date">Jul 2025 – Jun 2026</div>
+                <div class="card timeline-card">
+                    <h3>Video Subtitle Translation</h3>
+                    <div class="org">YouTube</div>
+                    <div class="meta"><span class="tag">Freelance</span><span class="tag">India · Remote</span></div>
+                    <p>
+                        Collaborated with Magnon Sancus and YouTube on Manipuri video subtitle translation, ensuring
+                        accurate, natural, and context-preserving translations while maintaining the original meaning and tone.
+                    </p>
+                </div>
+            </li>
 
-        <li>
-            <strong>Manipuri Language Expert</strong> – Lingual Consultancy Services (Freelance)<br>
-            <em>Jan 2025 – Dec 2025 | India (Remote)</em><br>
-            Provided professional Manipuri translation and transcription services while ensuring linguistic
-            accuracy, consistency, and quality. Worked with client-specific requirements, maintained
-            confidentiality, met project deadlines, and delivered high-quality linguistic data.
-        </li>
+            <li class="timeline-item reveal" data-tags="translation speech">
+                <div class="timeline-date">Jan 2025 – Dec 2025</div>
+                <div class="card timeline-card">
+                    <h3>Manipuri Language Expert</h3>
+                    <div class="org">Lingual Consultancy Services</div>
+                    <div class="meta"><span class="tag">Freelance</span><span class="tag">India · Remote</span></div>
+                    <p>
+                        Provided professional Manipuri translation and transcription services while ensuring linguistic
+                        accuracy, consistency, and quality. Worked with client-specific requirements, maintained
+                        confidentiality, met project deadlines, and delivered high-quality linguistic data.
+                    </p>
+                </div>
+            </li>
 
-        <li>
-            <strong>Linguistic Translator & Transcriber</strong> – Shaip (Freelance)<br>
-            <em>Jan 2023 – Dec 2024 | Remote</em><br>
-            Provided Manipuri–English translation and transcription services for language-data projects.
-            Translated documents accurately, transcribed audio content, and ensured linguistic quality and
-            consistency according to project requirements.
-        </li>
-    </ul>
+            <li class="timeline-item reveal" data-tags="translation speech">
+                <div class="timeline-date">Jan 2023 – Dec 2024</div>
+                <div class="card timeline-card">
+                    <h3>Linguistic Translator &amp; Transcriber</h3>
+                    <div class="org">Shaip</div>
+                    <div class="meta"><span class="tag">Freelance</span><span class="tag">Remote</span></div>
+                    <p>
+                        Provided Manipuri–English translation and transcription services for language-data projects.
+                        Translated documents accurately, transcribed audio content, and ensured linguistic quality and
+                        consistency according to project requirements.
+                    </p>
+                </div>
+            </li>
+        </ol>
+    </div>
 </section>
 
-<!-- Publications -->
-<section>
-    <h3>Publications</h3>
-    <ul class="content">
-        <li>
-            <strong>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</strong><br>
-            Laishram Thoibisana Devi, Grace Lee (University of Houston)<br>
-            <em>Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</em>
-        </li>
-    </ul>
-    <p class="content">
-        See all my publications on
-        <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color: white;">Google Scholar</a>.
-    </p>
+<!-- Research -->
+<section class="section" id="research">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Research</span>
+            <h2>Publications &amp; projects</h2>
+        </div>
+        <div class="stack">
+            <article class="card pub reveal">
+                <div class="pub-venue">WMT<br>2026</div>
+                <div>
+                    <span class="pub-kind">Publication</span>
+                    <h3>EROL: Transformer-Based Multilingual Translation for Northeastern Indian Language Pairs</h3>
+                    <p class="pub-authors"><strong>Laishram Thoibisana Devi</strong>, Grace Lee (University of Houston)</p>
+                    <p class="pub-where">Proceedings of the Eleventh Conference on Machine Translation (WMT 2026)</p>
+                    <a class="text-link" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                        View on Google Scholar
+                        <svg class="icon"><use href="#i-arrow"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card pub reveal">
+                <div class="pub-venue alt">MT</div>
+                <div>
+                    <span class="pub-kind">Project</span>
+                    <h3>Indian Northeast Languages Machine Translation</h3>
+                    <ul>
+                        <li>Prepared and validated Manipuri language data in Meitei Mayek script for multilingual MT evaluation.</li>
+                        <li>Supported language resources for Indian Northeast languages and low-resource machine translation.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
 
-<!-- Education -->
-<section>
-    <h3>Education</h3>
-    <ul class="content">
-        <li>
-            <strong>Higher National Diploma – Korean Language & Literature</strong><br>
-            Nalanda University<br>
-            <em>January 2025</em><br>
-            Activities & Societies: My love is in the Language
-        </li>
+<!-- Languages playground -->
+<section class="section" id="languages">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Just for fun</span>
+            <h2>Explore my languages</h2>
+            <p>Pick a word to see it in Manipuri, Hindi, Korean and English, or see if you can out-type me.</p>
+        </div>
+        <div class="play-grid">
+            <div class="card play-card reveal">
+                <h3>Say it in four languages</h3>
+                <p>Manipuri is shown in its own script, Meitei Mayek.</p>
+                <div class="word-chips" id="word-chips" role="group" aria-label="Choose a word"></div>
+                <div class="translations" id="translations" aria-live="polite"></div>
+            </div>
 
-        <li>
-            <strong>Bachelor of Arts (B.A.) in Education</strong><br>
-            Manipur University<br>
-            <em>July 2018 – June 2022</em><br>
-            Graduated with First Class Honors<br>
-            Skills: Linguistics
-        </li>
-
-        <li>
-            <strong>Intermediate – Science</strong><br>
-            Waikhom Mani Girls’ College<br>
-            <em>July 2017 – June 2019</em><br>
-            Physics, Chemistry, Biology, and Mathematics
-        </li>
-    </ul>
+            <div class="card play-card reveal">
+                <h3>Can you beat my 42 WPM?</h3>
+                <p>My certified typing speed is 42 words per minute at 98% accuracy. Type the sentence below to try.</p>
+                <div class="typing-target" id="typing-target" aria-hidden="true"></div>
+                <label for="typing-input" class="honeypot">Type the sentence</label>
+                <input class="typing-input" id="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here…">
+                <div class="typing-stats">
+                    <div><strong id="wpm">0</strong>WPM</div>
+                    <div><strong id="accuracy">100%</strong>Accuracy</div>
+                </div>
+                <p class="typing-result" id="typing-result" aria-live="polite"></p>
+                <button class="btn btn-outline btn-sm" id="typing-reset" type="button">Try again</button>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Certifications -->
-<section>
-    <h3>Licenses & Certifications</h3>
-    <ul class="content">
-        <li>
-            <strong>Certificate of Proficiency in Korean</strong><br>
-            Nalanda University<br>
-            <em>Issued June 2025</em><br>
-            Credential ID: CLK/25-S/KOR24
-        </li>
+<!-- LinkedIn -->
+<section class="section" id="linkedin">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">LinkedIn</span>
+            <h2>Latest from my LinkedIn</h2>
+            <p>Updates on my projects, research and language work.</p>
+        </div>
+        <div class="posts-grid" id="posts-grid"></div>
+        <div class="card follow-card reveal" style="margin-top: 20px;">
+            <span class="service-icon"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg></span>
+            <div>
+                <h3>Follow my journey</h3>
+                <p>Connect with me on LinkedIn for new posts, projects and opportunities.</p>
+            </div>
+            <div class="follow-actions">
+                <a class="btn btn-linkedin" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
+                    <svg class="icon icon-fill"><use href="#i-linkedin"/></svg>
+                    Connect
+                </a>
+                <a class="btn btn-outline" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fhellothoi.github.io%2F" target="_blank" rel="noopener">
+                    <svg class="icon"><use href="#i-share"/></svg>
+                    Share this site
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <li>
-            <strong>Advanced Data Analytics</strong><br>
-            Google<br>
-            <em>Issued January 2025</em>
-        </li>
+<!-- Education & Certifications -->
+<section class="section" id="education">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Background</span>
+            <h2>Education &amp; certifications</h2>
+        </div>
+        <div class="two-col">
+            <div class="reveal">
+                <h3 class="col-title"><svg class="icon"><use href="#i-cap"/></svg> Education</h3>
+                <div class="stack">
+                    <div class="card entry">
+                        <span class="entry-date">2025 – 2026</span>
+                        <h4>Higher National Diploma – Korean Language &amp; Literature</h4>
+                        <div class="org">Nalanda University</div>
+                    </div>
+                    <div class="card entry">
+                        <span class="entry-date">2019 – 2022</span>
+                        <h4>Bachelor of Arts (B.A.) in Education</h4>
+                        <div class="org">Manipur University</div>
+                        <p>Graduated with First Class Honors · Linguistics</p>
+                    </div>
+                    <div class="card entry">
+                        <span class="entry-date">2017 – 2019</span>
+                        <h4>Intermediate – Science</h4>
+                        <div class="org">Waikhom Mani Girls’ College</div>
+                        <p>Physics, Chemistry, Biology, and Mathematics</p>
+                    </div>
+                </div>
+            </div>
 
-        <li>
-            <strong>Typing Test Certification</strong><br>
-            Typing.com<br>
-            <em>Issued August 2024</em><br>
-            Credential ID: 305972911-158006147<br>
-            Typing Speed: 42 WPM | Accuracy: 98%
-        </li>
-    </ul>
+            <div class="reveal">
+                <h3 class="col-title"><svg class="icon"><use href="#i-award"/></svg> Licenses &amp; certifications</h3>
+                <div class="stack">
+                    <div class="card entry">
+                        <span class="entry-date">Jun 2025</span>
+                        <h4>Certificate of Proficiency in Korean</h4>
+                        <div class="org">Nalanda University</div>
+                        <p>Credential ID: CLK/25-S/KOR24</p>
+                    </div>
+                    <div class="card entry">
+                        <span class="entry-date">Aug 2024</span>
+                        <h4>Typing Test Certification</h4>
+                        <div class="org">Typing.com</div>
+                        <p>42 WPM · 98% accuracy · Credential ID: 305972911-158006147</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Contact -->
-<section id="contact">
-    <h3>Contact Me</h3>
-    <p class="content contact-intro">
-        Need Manipuri translation, transcription, or language data work? Send me a message
-        and I'll get back to you by email. You can also reach me on LinkedIn.
-    </p>
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's work together</h2>
+            <p>Need Manipuri translation, transcription, or language data work? Send me a message and I'll get back to you by email.</p>
+        </div>
+        <div class="contact-grid">
+            <ul class="contact-list reveal">
+                <li>
+                    <a class="card contact-item" href="mailto:thoiclare@gmail.com">
+                        <span class="service-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+                        <span><span class="contact-label">Email</span><span class="contact-value">thoiclare@gmail.com</span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card contact-item" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
+                        <span class="service-icon"><svg class="icon icon-fill"><use href="#i-linkedin"/></svg></span>
+                        <span><span class="contact-label">LinkedIn</span><span class="contact-value">linkedin.com/in/hellothoi</span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="card contact-item" href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                        <span class="service-icon"><svg class="icon icon-fill"><use href="#i-scholar"/></svg></span>
+                        <span><span class="contact-label">Google Scholar</span><span class="contact-value">Research profile</span></span>
+                    </a>
+                </li>
+                <li>
+                    <div class="card contact-item">
+                        <span class="service-icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+                        <span><span class="contact-label">Location</span><span class="contact-value">Imphal, Manipur, India · Remote worldwide</span></span>
+                    </div>
+                </li>
+            </ul>
 
-    <div class="header-links" style="justify-content: flex-start;">
-        <a class="btn" href="mailto:YOUR_EMAIL@example.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
-            Email Me
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-            LinkedIn
-        </a>
+            <div class="card form-card reveal">
+                <h3>Send a message</h3>
+                <p>Your message goes straight to my inbox.</p>
+
+                <!-- Messages are delivered to this email by FormSubmit (https://formsubmit.co) -->
+                <form class="contact-form" id="contact-form" action="https://formsubmit.co/thoiclare@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New message from your website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+                    <div class="form-row">
+                        <div>
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Your email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project, languages and timeline" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <svg class="icon"><use href="#i-mail"/></svg>
+                        Send message
+                    </button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <!-- Messages are delivered to the email below by FormSubmit (https://formsubmit.co) -->
-    <form class="contact-form" id="contact-form" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
-        <input type="hidden" name="_subject" value="New message from your website">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
-
-        <div>
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-
-        <div>
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Send Message</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
 </section>
+
+</main>
 
 <!-- Footer -->
 <footer>
-    © 2026 Laishram Thoibisana. All rights reserved.<br>
-    <a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">LinkedIn</a> ·
-    <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <div class="container">
+        <a class="brand" href="#top"><span class="brand-mark">LT</span> Laishram Thoibisana</a>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/hellothoi/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=_9rKg3kAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="mailto:thoiclare@gmail.com">Email</a>
+        </div>
+        <span>© 2026 Laishram Thoibisana. All rights reserved.</span>
+    </div>
 </footer>
 
+<button class="icon-btn to-top" id="to-top" aria-label="Back to top">
+    <svg class="icon"><use href="#i-up"/></svg>
+</button>
+
 <script>
-    // Send the form in the background so the visitor stays on the page
+    // ---------- LinkedIn posts ----------
+    // To show a post: open it on LinkedIn, click "…" > "Embed this post", and copy the
+    // link inside src="…". Paste each link below, newest first.
+    const LINKEDIN_POSTS = [
+        // 'https://www.linkedin.com/embed/feed/update/urn:li:share:0000000000000000000',
+    ];
+
+    const postsGrid = document.getElementById('posts-grid');
+    LINKEDIN_POSTS.forEach((src) => {
+        const frame = document.createElement('iframe');
+        frame.className = 'post-frame reveal';
+        frame.src = src;
+        frame.title = 'LinkedIn post by Laishram Thoibisana';
+        frame.loading = 'lazy';
+        frame.allowFullscreen = true;
+        postsGrid.appendChild(frame);
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- Theme ----------
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        const root = document.documentElement;
+        const isDark = root.dataset.theme
+            ? root.dataset.theme === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.dataset.theme = isDark ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    });
+
+    // ---------- Mobile menu ----------
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+
+    navLinks.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+            navLinks.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Highlight the section currently on screen in the menu
+    const menuLinks = [...navLinks.querySelectorAll('a[href^="#"]')];
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            menuLinks.forEach((link) => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
+
+    // ---------- Scroll reveal ----------
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    // ---------- Count-up stats ----------
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            statObserver.unobserve(entry.target);
+            const el = entry.target;
+            const target = Number(el.dataset.count);
+            const suffix = el.dataset.suffix || '';
+            if (reduceMotion) return;
+            const start = performance.now();
+            const tick = (now) => {
+                const progress = Math.min((now - start) / 1200, 1);
+                el.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3))) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach((el) => statObserver.observe(el));
+
+    // ---------- Back to top ----------
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+        toTop.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
+
+    // ---------- Background video (skipped for visitors who ask for reduced motion) ----------
+    const video = document.getElementById('bg-video');
+    if (!reduceMotion) {
+        video.src = 'background-picnic.mp4';
+        video.addEventListener('canplay', () => video.classList.add('ready'), { once: true });
+        video.play().catch(() => {});
+    }
+
+    // ---------- Greeting card ----------
+    const greetings = [
+        { lang: 'Manipuri', code: 'mni', word: 'ꯈꯨꯔꯨꯝꯖꯔꯤ', roman: 'Khurumjari' },
+        { lang: 'Hindi', code: 'hi', word: 'नमस्ते', roman: 'Namaste' },
+        { lang: 'Korean', code: 'ko', word: '안녕하세요', roman: 'Annyeonghaseyo' },
+        { lang: 'English', code: 'en', word: 'Hello', roman: '' }
+    ];
+    const helloCard = document.getElementById('hello-card');
+    const helloLang = document.getElementById('hello-lang');
+    const helloWord = document.getElementById('hello-word');
+    const helloRoman = document.getElementById('hello-roman');
+    const helloDots = document.getElementById('hello-dots');
+    let helloIndex = 0;
+    let helloTimer;
+
+    helloDots.innerHTML = greetings.map(() => '<span></span>').join('');
+
+    function showGreeting(index) {
+        helloIndex = index;
+        helloCard.classList.add('switching');
+        setTimeout(() => {
+            const g = greetings[index];
+            helloLang.textContent = g.lang;
+            helloWord.textContent = g.word;
+            helloWord.lang = g.code;
+            helloRoman.textContent = g.roman;
+            [...helloDots.children].forEach((dot, i) => dot.classList.toggle('on', i === index));
+            helloCard.classList.remove('switching');
+        }, reduceMotion ? 0 : 300);
+    }
+
+    function nextGreeting() {
+        showGreeting((helloIndex + 1) % greetings.length);
+    }
+
+    function startGreetings() {
+        clearInterval(helloTimer);
+        if (!reduceMotion) helloTimer = setInterval(nextGreeting, 3000);
+    }
+
+    helloDots.children[0].classList.add('on');
+    helloCard.addEventListener('click', () => { nextGreeting(); startGreetings(); });
+    helloCard.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            nextGreeting();
+            startGreetings();
+        }
+    });
+    helloCard.addEventListener('mouseenter', () => clearInterval(helloTimer));
+    helloCard.addEventListener('mouseleave', startGreetings);
+    startGreetings();
+
+    // ---------- Word explorer ----------
+    const words = [
+        { en: 'Hello', mni: ['ꯈꯨꯔꯨꯝꯖꯔꯤ', 'Khurumjari'], hi: ['नमस्ते', 'Namaste'], ko: ['안녕하세요', 'Annyeonghaseyo'] },
+        { en: 'Thank you', mni: ['ꯊꯥꯒꯠꯆꯔꯤ', 'Thagatchari'], hi: ['धन्यवाद', 'Dhanyavaad'], ko: ['감사합니다', 'Gamsahamnida'] },
+        { en: 'Love', mni: ['ꯅꯨꯡꯁꯤ', 'Nungsi'], hi: ['प्यार', 'Pyaar'], ko: ['사랑', 'Sarang'] },
+        { en: 'Mother', mni: ['ꯏꯃꯥ', 'Ima'], hi: ['माँ', 'Maa'], ko: ['어머니', 'Eomeoni'] },
+        { en: 'Friend', mni: ['ꯃꯔꯨꯞ', 'Marup'], hi: ['दोस्त', 'Dost'], ko: ['친구', 'Chingu'] },
+        { en: 'Water', mni: ['ꯏꯁꯤꯡ', 'Ising'], hi: ['पानी', 'Paani'], ko: ['물', 'Mul'] },
+        { en: 'Book', mni: ['ꯂꯥꯏꯔꯤꯛ', 'Lairik'], hi: ['किताब', 'Kitaab'], ko: ['책', 'Chaek'] }
+    ];
+    const languages = [
+        { key: 'mni', name: 'Manipuri', voice: null },
+        { key: 'hi', name: 'Hindi', voice: 'hi-IN' },
+        { key: 'ko', name: 'Korean', voice: 'ko-KR' },
+        { key: 'en', name: 'English', voice: 'en-US' }
+    ];
+    const chips = document.getElementById('word-chips');
+    const translations = document.getElementById('translations');
+    const canSpeak = 'speechSynthesis' in window;
+
+    function speak(text, lang) {
+        speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.85;
+        speechSynthesis.speak(utterance);
+    }
+
+    function showWord(index) {
+        const word = words[index];
+        [...chips.children].forEach((chip, i) => chip.setAttribute('aria-pressed', i === index));
+        translations.innerHTML = '';
+        languages.forEach((language) => {
+            const [text, roman] = language.key === 'en' ? [word.en, ''] : word[language.key];
+            const box = document.createElement('div');
+            box.className = 'translation';
+            box.innerHTML = `
+                <span class="t-lang">${language.name}</span>
+                <span class="t-word" lang="${language.key}">${text}</span>
+                <span class="t-roman">${roman || '&nbsp;'}</span>`;
+            if (canSpeak && language.voice) {
+                const button = document.createElement('button');
+                button.className = 'speak';
+                button.type = 'button';
+                button.setAttribute('aria-label', `Listen in ${language.name}`);
+                button.innerHTML = '<svg class="icon"><use href="#i-volume"/></svg>';
+                button.addEventListener('click', () => speak(text, language.voice));
+                box.appendChild(button);
+            }
+            translations.appendChild(box);
+        });
+    }
+
+    words.forEach((word, i) => {
+        const chip = document.createElement('button');
+        chip.className = 'chip';
+        chip.type = 'button';
+        chip.textContent = word.en;
+        chip.addEventListener('click', () => showWord(i));
+        chips.appendChild(chip);
+    });
+    showWord(0);
+
+    // ---------- Typing challenge ----------
+    const sentence = 'My love is in the language, and every word carries a story.';
+    const typingTarget = document.getElementById('typing-target');
+    const typingInput = document.getElementById('typing-input');
+    const wpmEl = document.getElementById('wpm');
+    const accuracyEl = document.getElementById('accuracy');
+    const resultEl = document.getElementById('typing-result');
+    let typingStart = null;
+    let typingDone = false;
+
+    function renderTarget(typed) {
+        typingTarget.innerHTML = [...sentence].map((char, i) => {
+            let cls = '';
+            if (i < typed.length) cls = typed[i] === char ? 'ok' : 'bad';
+            else if (i === typed.length) cls = 'cursor';
+            return `<span class="${cls}">${char}</span>`;
+        }).join('');
+    }
+
+    function resetTyping() {
+        typingStart = null;
+        typingDone = false;
+        typingInput.value = '';
+        typingInput.disabled = false;
+        wpmEl.textContent = '0';
+        accuracyEl.textContent = '100%';
+        resultEl.textContent = '';
+        renderTarget('');
+    }
+
+    typingInput.addEventListener('input', () => {
+        if (typingDone) return;
+        const typed = typingInput.value;
+        if (!typingStart) typingStart = performance.now();
+        renderTarget(typed);
+
+        const minutes = (performance.now() - typingStart) / 60000;
+        const correct = [...typed].filter((char, i) => char === sentence[i]).length;
+        const wpm = minutes > 0 ? Math.round((correct / 5) / minutes) : 0;
+        const accuracy = typed.length ? Math.round((correct / typed.length) * 100) : 100;
+        wpmEl.textContent = typed.length > 3 ? wpm : 0;
+        accuracyEl.textContent = accuracy + '%';
+
+        if (typed.length >= sentence.length) {
+            typingDone = true;
+            typingInput.disabled = true;
+            resultEl.textContent = wpm > 42
+                ? `Impressive! ${wpm} WPM, you beat my 42 WPM.`
+                : `${wpm} WPM. Nice try! My certified speed is 42 WPM at 98% accuracy.`;
+        }
+    });
+
+    document.getElementById('typing-reset').addEventListener('click', () => {
+        resetTyping();
+        typingInput.focus();
+    });
+    resetTyping();
+
+    // ---------- Experience filter ----------
+    const timelineItems = [...document.querySelectorAll('.timeline-item')];
+    const filterChips = [...document.querySelectorAll('[data-filter]')];
+
+    function applyFilter(filter) {
+        filterChips.forEach((chip) => chip.setAttribute('aria-pressed', chip.dataset.filter === filter));
+        timelineItems.forEach((item) => {
+            const match = filter === 'all'
+                || (filter === 'current' && item.hasAttribute('data-current'))
+                || item.dataset.tags.split(' ').includes(filter);
+            item.hidden = !match;
+            item.classList.remove('last-visible');
+        });
+        const visible = timelineItems.filter((item) => !item.hidden);
+        if (visible.length) visible[visible.length - 1].classList.add('last-visible');
+    }
+
+    filterChips.forEach((chip) => chip.addEventListener('click', () => applyFilter(chip.dataset.filter)));
+    applyFilter('all');
+
+    // ---------- Contact form: send in the background so the visitor stays on the page ----------
     const form = document.getElementById('contact-form');
     const statusEl = document.getElementById('form-status');
 
@@ -447,6 +2543,7 @@
         event.preventDefault();
         const button = form.querySelector('button');
         button.disabled = true;
+        statusEl.className = 'form-status';
         statusEl.textContent = 'Sending...';
 
         try {
@@ -457,9 +2554,11 @@
             });
             if (!response.ok) throw new Error();
             form.reset();
+            statusEl.classList.add('success');
             statusEl.textContent = 'Thank you! Your message has been sent.';
         } catch (error) {
-            statusEl.textContent = 'Sorry, the message could not be sent. Please use the Email Me button instead.';
+            statusEl.classList.add('error');
+            statusEl.textContent = 'Sorry, the message could not be sent. Please email thoiclare@gmail.com directly.';
         } finally {
             button.disabled = false;
         }
