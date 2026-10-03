@@ -610,6 +610,27 @@
             margin-top: 36px;
         }
 
+        /* Quote under the hero button */
+        .verse {
+            margin: 34px 0 0;
+            font-family: var(--display);
+            font-size: clamp(19px, 1.8vw, 22px);
+            font-style: italic;
+            color: rgba(255, 247, 249, 0.85);
+        }
+
+        .verse span {
+            display: block;
+            margin-top: 6px;
+            font-family: var(--sans);
+            font-size: 11.5px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose-soft);
+        }
+
         /* Greeting card, styled like a taped note */
         .hello {
             position: relative;
@@ -1417,6 +1438,16 @@
             line-height: 1.9;
         }
 
+        /* Reference under the English typing line */
+        .typing-ref {
+            margin: -4px 0 16px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--berry);
+        }
+
         .keypad {
             display: flex;
             flex-wrap: wrap;
@@ -1917,31 +1948,10 @@
         }
 
         .thanks {
-            margin: 6px 0 22px;
+            margin: 6px 0 36px;
             font-family: var(--script);
             font-size: clamp(30px, 4vw, 42px);
             color: #fff;
-        }
-
-        .verse {
-            margin: 0 auto 40px;
-            max-width: 520px;
-            font-family: var(--display);
-            font-size: 19px;
-            font-style: italic;
-            color: rgba(255, 247, 249, 0.8);
-        }
-
-        .verse span {
-            display: block;
-            margin-top: 6px;
-            font-family: var(--sans);
-            font-size: 11.5px;
-            font-style: normal;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--rose-soft);
         }
 
         .visitors {
@@ -2357,6 +2367,7 @@
                     Looking for a service? <svg class="icon"><use href="#i-down"/></svg>
                 </a>
             </div>
+            <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
         </div>
 
         <div class="hello" id="hello" role="button" tabindex="0" aria-label="Say hello in my languages. Press to change language.">
@@ -2656,12 +2667,13 @@
 
             <div class="card play-card reveal d2">
                 <h3 id="typing-title">Can you beat my 42 WPM?</h3>
-                <p id="typing-desc">That is my certified speed, at 98% accuracy. Type the sentence below to try.</p>
+                <p id="typing-desc">That is my certified speed, at 98% accuracy. Type the line below to try.</p>
                 <div class="seg" role="group" aria-label="Typing language">
                     <button type="button" data-mode="en" aria-pressed="true">English</button>
                     <button type="button" data-mode="mni" aria-pressed="false">Meetei Mayek</button>
                 </div>
                 <div class="typing-target" id="typing-target" aria-hidden="true"></div>
+                <p class="typing-ref" id="typing-ref">Psalm 119:105</p>
                 <label for="typing-input" class="visually-hidden">Type the text shown above</label>
                 <input class="field" id="typing-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here…">
                 <div class="keypad" id="keypad" role="group" aria-label="Meetei Mayek letters" hidden></div>
@@ -2843,7 +2855,6 @@
     <div class="container">
         <span class="thanks-native" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span>
         <p class="thanks">Thank you for visiting</p>
-        <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
         <p class="visitors" id="visitors" hidden>
             <svg class="icon icon-fill" aria-hidden="true"><use href="#i-heart"/></svg>
             <span><strong id="visitor-count">0</strong> lovely visitors so far</span>
@@ -3140,14 +3151,16 @@
     // ---------- Typing challenge (English or Meetei Mayek) ----------
     const typingModes = {
         en: {
-            text: 'Every language carries a story worth telling well.',
+            text: 'Your word is a lamp for my feet, a light on my path.',
+            reference: 'Psalm 119:105',
             title: 'Can you beat my 42 WPM?',
-            desc: 'That is my certified speed, at 98% accuracy. Type the sentence below to try.',
+            desc: 'That is my certified speed, at 98% accuracy. Type the line below to try.',
             placeholder: 'Start typing here…'
         },
         mni: {
             // hello · thank you · love · mother · friend · water · book
             text: 'ꯈꯨꯔꯨꯝꯖꯔꯤ ꯊꯥꯒꯠꯆꯔꯤ ꯅꯨꯡꯁꯤ ꯏꯃꯥ ꯃꯔꯨꯞ ꯏꯁꯤꯡ ꯂꯥꯏꯔꯤꯛ',
+            reference: '',
             title: 'Try typing Meetei Mayek',
             desc: 'Seven everyday words: hello, thank you, love, mother, friend, water and book.',
             placeholder: 'Type in Meetei Mayek…'
@@ -3156,6 +3169,7 @@
     const typingTitle = document.getElementById('typing-title');
     const typingDesc = document.getElementById('typing-desc');
     const typingTarget = document.getElementById('typing-target');
+    const typingRef = document.getElementById('typing-ref');
     const typingInput = document.getElementById('typing-input');
     const keypad = document.getElementById('keypad');
     const typingHint = document.getElementById('typing-hint');
@@ -3233,6 +3247,8 @@
         modeButtons.forEach((button) => button.setAttribute('aria-pressed', button.dataset.mode === mode));
         typingTitle.textContent = config.title;
         typingDesc.textContent = config.desc;
+        typingRef.textContent = config.reference;
+        typingRef.hidden = !config.reference;
         typingInput.placeholder = config.placeholder;
         typingInput.lang = mode;
         typingTarget.lang = mode;
