@@ -1967,12 +1967,13 @@
             color: var(--rose);
         }
 
-        /* Resume viewer */
+        /* Resume viewer: the PDF fills the space under the header */
         .resume-dialog {
-            width: min(880px, calc(100% - 24px));
+            width: min(900px, calc(100% - 24px));
+            height: calc(100vh - 32px);
+            height: calc(100dvh - 32px);
             max-width: none;
-            max-height: calc(100vh - 32px);
-            max-height: calc(100dvh - 32px);
+            max-height: none;
             padding: 0;
             color: var(--text);
             background-color: var(--bg);
@@ -2007,20 +2008,18 @@
             font-size: 30px;
         }
 
-        .resume-body {
-            flex: 1;
-            padding: 22px;
-            overflow: auto;
-            overscroll-behavior: contain;
-            background-color: var(--bg-soft);
+        .resume-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .resume-body img {
-            display: block;
+        .resume-frame {
+            flex: 1;
             width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
+            min-height: 0;
+            border: 0;
+            background-color: var(--bg-soft);
         }
 
         .to-top {
@@ -2201,10 +2200,6 @@
             .resume-head h2 {
                 font-size: 26px;
             }
-
-            .resume-body {
-                padding: 12px;
-            }
         }
 
         @media (max-width: 420px) {
@@ -2264,6 +2259,7 @@
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
     <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4"/><path d="m15.4 6.5-6.8 4"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
 </svg>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -2827,7 +2823,7 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <span class="thanks-native" lang="mni">ꯌꯥꯏꯐꯥꯔꯦ</span>
+        <span class="thanks-native" lang="mni">ꯊꯥꯒꯠꯆꯔꯤ</span>
         <p class="thanks">Thank you for visiting</p>
         <p class="verse">“Whatever you do, work at it with all your heart.”<span>Colossians 3:23</span></p>
         <p class="visitors" id="visitors" hidden>
@@ -2838,17 +2834,20 @@
     </div>
 </footer>
 
-<!-- Resume viewer -->
+<!-- Resume viewer: shows resume.pdf in the browser's own PDF viewer -->
 <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-title">
     <div class="resume-head">
         <h2 id="resume-title">My <em>resume</em></h2>
-        <button class="menu-close" type="button" id="resume-close" aria-label="Close resume">
-            <svg class="icon"><use href="#i-close"/></svg>
-        </button>
+        <div class="resume-actions">
+            <a class="btn btn-outline btn-sm" href="resume.pdf" download="Thoibisana-Laishram-Resume.pdf">
+                <svg class="icon"><use href="#i-download"/></svg>Download
+            </a>
+            <button class="menu-close" type="button" id="resume-close" aria-label="Close resume">
+                <svg class="icon"><use href="#i-close"/></svg>
+            </button>
+        </div>
     </div>
-    <div class="resume-body">
-        <img src="assets/resume.png" alt="One-page resume of Thoibisana Laishram with profile, experience, projects, education, languages, skills and certifications." width="1240" height="1754" loading="lazy">
-    </div>
+    <iframe class="resume-frame" id="resume-frame" title="Resume of Thoibisana Laishram (PDF)"></iframe>
 </dialog>
 
 <button class="to-top" id="to-top" aria-label="Back to top">
@@ -2932,20 +2931,30 @@
 
     menuOpen.addEventListener('click', () => setMenu(true));
     menuClose.addEventListener('click', () => setMenu(false));
+    // Close the menu after a link is followed (the resume viewer closes it itself when it opens)
     menu.addEventListener('click', (event) => {
-        if (event.target.closest('a') && !event.target.closest('[data-resume]')) setMenu(false);
+        if (event.target.closest('a') && !event.defaultPrevented) setMenu(false);
     });
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && menu.classList.contains('open')) setMenu(false);
     });
 
-    // ---------- Resume viewer (falls back to opening the PDF if <dialog> is not supported) ----------
+    // ---------- Resume viewer ----------
+    // On computers the PDF opens inside the page. Phones, tablets and browsers that can't show a PDF
+    // inside a page follow the link instead, which opens resume.pdf in their own viewer.
     const resumeDialog = document.getElementById('resume-dialog');
-    if (typeof resumeDialog.showModal === 'function') {
+    const resumeFrame = document.getElementById('resume-frame');
+    const canShowPdf = typeof resumeDialog.showModal === 'function'
+        && navigator.pdfViewerEnabled === true
+        && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (canShowPdf) {
         document.querySelectorAll('[data-resume]').forEach((link) => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
                 if (menu.classList.contains('open')) setMenu(false);
+                // Load the PDF the first time the viewer opens, not with the page
+                if (!resumeFrame.src) resumeFrame.src = 'resume.pdf#view=FitH';
                 resumeDialog.showModal();
                 document.body.style.overflow = 'hidden';
             });
@@ -3137,7 +3146,7 @@
         },
         mni: {
             // John 3:16 in Manipuri (Meetei Mayek)
-            text: 'ꯏꯁ꯭ꯣꯔꯅꯥ ꯇꯥꯏꯕꯪꯄꯥꯟꯕꯨ ꯑꯁꯨꯝꯅꯥ ꯅꯨꯡꯁꯤꯕꯤꯔꯦ, ꯍꯥꯏꯕꯗꯤ ꯃꯍꯥꯛꯀꯤ ꯑꯃꯇꯥ ꯉꯥꯏꯕꯥ ꯃꯆꯥ ꯅꯤꯄꯥ ꯑꯗꯨꯕꯨ ꯄꯤꯕꯤꯔꯦ, ꯑꯗꯨꯅ ꯃꯍꯥꯛꯄꯨ ꯊꯥꯖꯕꯥ ꯃꯤ ꯈꯨꯗꯤꯡꯅꯥ ꯃꯥꯉꯗꯗꯨꯅꯥ ꯂꯣꯝꯕꯥ ꯅꯥꯏꯗꯕ ꯍꯤꯡꯕꯥ ꯐꯪꯅꯕꯅꯤ꯫',
+            text: 'ꯃꯔꯝꯗꯤ ꯏꯁ꯭ꯣꯔꯅꯥ ꯇꯥꯏꯕꯪꯄꯥꯟꯕꯨ ꯑꯁꯨꯝꯅꯥ ꯅꯨꯡꯁꯤꯕꯤꯔꯦ, ꯍꯥꯏꯕꯗꯤ ꯃꯍꯥꯛꯀꯤ ꯑꯃꯇꯥ ꯉꯥꯏꯕꯥ ꯃꯆꯥ ꯅꯤꯄꯥ ꯑꯗꯨꯕꯨ ꯄꯤꯕꯤꯔꯦ, ꯑꯗꯨꯅ ꯃꯍꯥꯛꯄꯨ ꯊꯥꯖꯕꯥ ꯃꯤ ꯈꯨꯗꯤꯡꯅꯥ ꯃꯥꯉꯗꯗꯨꯅꯥ ꯂꯣꯝꯕꯥ ꯅꯥꯏꯗꯕ ꯍꯤꯡꯕꯥ ꯐꯪꯅꯕꯅꯤ꯫',
             reference: 'John 3:16',
             title: 'Try typing Meetei Mayek',
             desc: 'Type the line below to try.',
